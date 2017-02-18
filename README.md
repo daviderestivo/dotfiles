@@ -12,10 +12,19 @@ This repo collects my personal dofiles:
 git clone https://github.com/daviderestivo/dotfiles.git
 ```
 
-### Link them 
+### Link them
 
 ```
+# Move to your homedir
+cd ~
+
+# Backup current dotfiles
+cp .bash_profile .bash_profile.orig 
+cp .bashrc .bashrc.orig
+cp .tmux.conf .tmux.conf.orig
+
+# Use the one provided by this repo
 ln -s dotfiles/bash_profile .bash_profile
-ln -s dotfiles/tmux.conf .tmux.conf
 ln -s dotfiles/bashrc .bashrc
+ln -s dotfiles/tmux.conf .tmux.conf
 ```
