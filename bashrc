@@ -41,7 +41,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-
 #
 # A simple bash function to upgrade Python 2/3 packages
 #
@@ -97,6 +96,12 @@ pip_update() {
 	return 1
  fi
 }
+
+pwdgen(){
+    # First argument is the password lenght
+    openssl rand -base64 $1
+}
+
 #
 #
 #
