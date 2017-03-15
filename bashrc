@@ -109,6 +109,9 @@ pwdgen(){
 # Homebrew's formulae that put executables in /usr/local/sbin
 export PATH="/usr/local/sbin:$PATH"
 
+# Add GEM bin PATH
+export PATH="~/.gem/ruby/2.0.0/bin"
+
 # Lefacy SSH with DH Group1
 alias sshl='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1'
 
