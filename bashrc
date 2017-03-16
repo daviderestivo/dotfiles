@@ -17,21 +17,6 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-# Some useful aliases
-alias ll='ls -l'
-alias la='ls -al'
-alias grep='grep --colour=auto'
-#alias ssh='ssh -X'
-alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
-alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
-
-# Showing a fortune in each *term
- case $TERM in
-     xterm*|rxvt|Eterm|eterm)
-	 cowthink `fortune`
-    ;;
-esac
-
 # Timestamps in Bash History
 HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
@@ -41,10 +26,26 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-#
-# A simple bash function to upgrade Python 2/3 packages
-#
+# Avoid cowsay for ansible
+export ANSIBLE_NOCOWS=1
 
+# Homebrew's formulae that put executables in /usr/local/bin and /usr/local/sbin
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Add ~/bin to the PATH
+PATH="~/bin:${PATH}"
+
+# Add GEM bin PATH
+export PATH="~/.gem/ruby/2.0.0/bin:$PATH"
+
+# Set EDITOR
+export EDITOR="emacs"
+
+##################
+# BASH FUNCTIONS #
+##################
+
+# A simple bash function to upgrade Python 2/3 packages
 pip_list_outdated() {
 	if [ "X$1" = "X" ]; then
 	 echo "A simple bash function to list all of the outdated python Eggs."
@@ -102,28 +103,55 @@ pwdgen(){
     openssl rand -base64 $1
 }
 
-#
-#
-#
+###########
+# ALIASES #
+###########
 
-# Homebrew's formulae that put executables in /usr/local/sbin
-export PATH="/usr/local/sbin:$PATH"
-
-# Add GEM bin PATH
-export PATH="~/.gem/ruby/2.0.0/bin:$PATH"
+# IOS XRv consoles
+alias c1='minicom -D unix#/tmp/rtr01.pipe'
+alias c2='minicom -D unix#/tmp/rtr02.pipe'
+alias c3='minicom -D unix#/tmp/rtr03.pipe'
+alias c4='minicom -D unix#/tmp/rtr04.pipe'
+alias c5='minicom -D unix#/tmp/rtr05.pipe'
+alias c6='minicom -D unix#/tmp/rtr06.pipe'
+alias c7='minicom -D unix#/tmp/rtr07.pipe'
+alias c8='minicom -D unix#/tmp/rtr08.pipe'
 
 # Lefacy SSH with DH Group1
 alias sshl='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1'
 
-# Set EDITOR
-export EDITOR="emacs"
+# tmux aliases
+alias ts='tmux' # tmux start
+alias ta='tmux attach -t' # tmux attach
+alias tl='tmux ls' # tmux list
 
-################
-# tmux aliases #
-################
-# tmux start
-alias ts='tmux'
-# tmux attach
-alias ta='tmux attach -t'
-# tmux list
-alias tl='tmux ls'
+# various aliases
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias ll='ls -l'
+alias la='ls -al'
+alias grep='grep --colour=auto'
+#alias ssh='ssh -X'
+alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+
+##############################
+# Load bash completion files #
+##############################
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
+fi
+
+BASH_COMPLETION_PATH="/usr/local/etc/bash_completion.d"
+for file in $BASH_COMPLETION_PATH/*
+do
+ source $file 
+done
+
+###################################
+# Showing a fortune in each *term #
+###################################
+case $TERM in
+    xterm*|rxvt|Eterm|eterm)
+	cowthink `fortune`
+	;;
+esac
