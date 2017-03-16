@@ -155,3 +155,10 @@ case $TERM in
 	cowthink `fortune`
 	;;
 esac
+
+############################
+# Add specific work config #
+############################
+if [ -f ~/.bashrc_scom ]; then
+    . ~/.bashrc_scom
+fi
