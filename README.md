@@ -5,6 +5,10 @@ This repo collects my personal dofiles:
 - .bash_profile
 - .tmux.conf
 
+In addition you can find some very simple tmuxinator config files:
+
+- tmuxinator/*.yml
+
 ## Installation
 
 ### Clone the repo
