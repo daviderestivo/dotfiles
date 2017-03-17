@@ -29,7 +29,7 @@ ln -s .dotfiles/bashrc .bashrc
 ln -s .dotfiles/tmux.conf .tmux.conf
 ```
 
-### Personalize your bashrc
+### Personalize your .bashrc
 
 If you wish to add additional .bashrc related configurations/aliases you can
 simply create a new:
