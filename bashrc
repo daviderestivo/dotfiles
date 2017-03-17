@@ -33,7 +33,7 @@ export ANSIBLE_NOCOWS=1
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Add ~/bin to the PATH
-PATH="~/bin:${PATH}"
+export PATH="~/bin:$PATH"
 
 # Add GEM bin PATH
 export PATH="~/.gem/ruby/2.0.0/bin:$PATH"
@@ -130,7 +130,7 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias ll='ls -l'
 alias la='ls -al'
 alias grep='grep --colour=auto'
-#alias ssh='ssh -X'
+alias sshx='ssh -X'
 alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
@@ -159,6 +159,6 @@ esac
 ############################
 # Add specific work config #
 ############################
-if [ -f ~/.bashrc_scom ]; then
-    . ~/.bashrc_scom
+if [ -f ~/.bashrc_personal ]; then
+    . ~/.bashrc_personal
 fi
