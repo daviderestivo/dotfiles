@@ -50,3 +50,4 @@ windows:
           - top
         - raspberry:
           - ssh pi@raspberry.starend
+          - clear
