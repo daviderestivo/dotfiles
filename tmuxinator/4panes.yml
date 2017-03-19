@@ -42,7 +42,7 @@ windows:
        - 
        - 
   - remote:
-      synchronize: after
+      # synchronize: after
       layout: tiled
       panes:
        - 
