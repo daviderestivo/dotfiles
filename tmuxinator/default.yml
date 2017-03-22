@@ -46,7 +46,7 @@ windows:
       layout: even-horizontal
       panes:
         - nas00:
-          - ssh admin@nas00
+          - ssh admin@nas00.starend
           - top
         - raspberry:
           - ssh pi@raspberry.starend
