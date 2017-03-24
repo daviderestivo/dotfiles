@@ -30,7 +30,7 @@ cp .tmux.conf .tmux.conf.orig
 # Use the one provided by this repo
 ln -s .dotfiles/bash_profile .bash_profile
 ln -s .dotfiles/bashrc .bashrc
-ln -s .dotfiles/tmux.conf .tmux.conf
+ln -s .dotfiles/tmux/tmux.conf .tmux.conf
 ```
 
 ### Personalize your .bashrc
