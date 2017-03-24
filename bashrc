@@ -29,14 +29,18 @@ export LC_CTYPE=en_US.UTF-8
 # Avoid cowsay for ansible
 export ANSIBLE_NOCOWS=1
 
-# Homebrew's formulae that put executables in /usr/local/bin and /usr/local/sbin
+# Homebrew's formulae puts executables in /usr/local/bin and /usr/local/sbin
+# Add both bin dirs to the PATH
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Add ~/bin to the PATH
 export PATH="~/bin:$PATH"
 
-# Add GEM bin PATH
+# Add GEM bin dir to the PATH
 export PATH="~/.gem/ruby/2.0.0/bin:$PATH"
+
+# Add TMUX Plugin Manager bin dir to the PATH
+export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
 
 # Set EDITOR
 export EDITOR="emacs"
