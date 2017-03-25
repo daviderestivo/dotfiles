@@ -17,7 +17,7 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-# Timestamps in Bash History
+# Timestamps in Bash history
 HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
 
@@ -49,7 +49,7 @@ export EDITOR="emacs"
 # BASH FUNCTIONS #
 ##################
 
-# A simple bash function to upgrade Python 2/3 packages
+# Helper functions used to upgrade Python 2/3 packages
 pip_list_outdated() {
 	if [ "X$1" = "X" ]; then
 	 echo "A simple bash function to list all of the outdated python Eggs."
@@ -102,6 +102,7 @@ pip_update() {
  fi
 }
 
+# Password generator
 pwdgen(){
     # First argument is the password lenght
     openssl rand -base64 $1
