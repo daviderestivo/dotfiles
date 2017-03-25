@@ -22,12 +22,12 @@ git clone https://github.com/daviderestivo/dotfiles.git ~/.dotfiles
 # Move to your homedir
 cd ~
 
-# Backup current dotfiles
+# Backup your current dotfiles
 cp .bash_profile .bash_profile.orig 
 cp .bashrc .bashrc.orig
 cp .tmux.conf .tmux.conf.orig
 
-# Use the one provided by this repo
+# Use the ones provided by this repo
 ln -s .dotfiles/bash_profile .bash_profile
 ln -s .dotfiles/bashrc .bashrc
 ln -s .dotfiles/tmux/tmux.conf .tmux.conf
