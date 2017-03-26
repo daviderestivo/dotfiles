@@ -14,6 +14,10 @@ In addition you can find some very simple tmuxinator config files:
 ### Clone the repo
 ```
 git clone https://github.com/daviderestivo/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+git submodule init
+git submodule update
+git submodule foreach --recursive git checkout master
 ```
 
 ### Link them
