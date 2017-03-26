@@ -1,6 +1,6 @@
 # dotfiles
 
-This repo collects my personal dofiles:
+This repo collects my personal dotfiles:
 - .bashrc
 - .bash_profile
 - .tmux.conf
@@ -53,7 +53,7 @@ ln -s .dotfiles/tmux/tmux.conf .tmux.conf
 ### Personalize your .bashrc
 
 If you wish to add additional .bashrc related configurations/aliases you can
-simply create a new:
+simply create a new .bashrc_personal:
 
 ```
 touch  ~/.bashrc_personal
