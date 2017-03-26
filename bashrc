@@ -161,9 +161,9 @@ case $TERM in
 	;;
 esac
 
-############################
-# Add specific work config #
-############################
+#######################
+# Add personal config #
+#######################
 if [ -f ~/.bashrc_personal ]; then
     . ~/.bashrc_personal
 fi
