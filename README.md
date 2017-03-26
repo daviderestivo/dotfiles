@@ -20,7 +20,20 @@ git submodule update
 git submodule foreach --recursive git checkout master
 ```
 
-### Link them
+### Install cmake and compile tmux-mem-cpu-load
+
+``` 
+# Install cmake if not done before
+brew install cmake
+
+# Compile tmux-mem-cpu-load
+cd  ~/.dotfiles/tmux/plugins/tmux-mem-cpu-load
+cmake .
+make
+```
+
+
+### Link the dotfiles
 
 ```
 # Move to your homedir
