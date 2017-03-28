@@ -10,3 +10,6 @@
 [submodule "tmux-logging"]
 	path = tmux/plugins/tmux-logging
 	url = https://github.com/tmux-plugins/tmux-logging
+[submodule "tmux-prefix-highlight"]
+        path = tmux/plugins/tmux-prefix-highlight
+        url = https://github.com/tmux-plugins/tmux-prefix-highlight
