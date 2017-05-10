@@ -33,8 +33,8 @@ export ANSIBLE_NOCOWS=1
 # Add both bin dirs to the PATH
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Add ~/bin to the PATH
-export PATH="~/bin:$PATH"
+# Add ~/bin and  ~/.local/bin/ to the PATH
+export PATH=" ~/.local/bin/:~/bin:$PATH"
 
 # Add GEM bin dir to the PATH
 export PATH="~/.gem/ruby/2.0.0/bin:$PATH"
