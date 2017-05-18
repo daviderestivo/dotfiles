@@ -60,3 +60,11 @@ touch  ~/.bashrc_personal
 ```
 
 and add them there.
+
+### Note for GNU/Linux users
+
+Please comment out the below line in tmux.conf in case you run tmux in GNU/Linux:
+
+```
+set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+```
