@@ -138,6 +138,7 @@ alias grep='grep --colour=auto'
 alias sshx='ssh -X'
 alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+alias oc='octave-cli'
 
 ##############################
 # Load bash completion files #
@@ -149,7 +150,7 @@ fi
 BASH_COMPLETION_PATH="/usr/local/etc/bash_completion.d"
 for file in $BASH_COMPLETION_PATH/*
 do
- source $file 
+ source $file
 done
 
 ###################################
