@@ -1,6 +1,6 @@
 # dotfiles
 
-This repo collects my personal dotfiles for macOS. These dotfile can be used on GNU/Linux as well with some minor changes:
+This repo collects my personal dotfiles for macOS. These dotfiles can be used on GNU/Linux as well with some minor changes:
 
 - .bashrc
 - .bash_profile
@@ -66,8 +66,10 @@ and add them there.
 
 ### Note for GNU/Linux users
 
-Please comment out the below line in tmux.conf in case you run tmux in GNU/Linux:
+- Please comment out the below line in tmux.conf in case you run tmux in GNU/Linux:
 
-```
-set -g default-command "reattach-to-user-namespace -l ${SHELL}"
-```
+  ```
+  set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+  ```
+
+- Please use the standard mc.ext that comes with Midnight Commander
