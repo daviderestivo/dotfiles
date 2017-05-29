@@ -1,0 +1,110 @@
+# Midnight Commander 3.0 extension file
+# Warning: Structure of this file has changed completely with version 3.0
+#
+# All lines starting with # or empty lines are thrown away.
+# Lines starting in the first column should have following format:
+#
+# keyword/descNL, i.e. everything after keyword/ until new line is desc
+#
+# keyword can be:
+#
+#    shell (desc is, when starting with a dot, any extension (no wildcars),
+#          i.e. matches all the files *desc . Example: .tar matches *.tar;
+#          if it doesn't start with a dot, it matches only a file of that name)
+#
+#    shell/i (desc is, when starting with a dot, any extension (no wildcars),
+#          The same as shell but with case insensitive.
+#
+#    regex (desc is an extended regular expression)
+#          Please note that we are using the GNU regex library and thus
+#          \| matches the literal | and | has special meaning (or) and
+#          () have special meaning and \( \) stand for literal ( ).
+#
+#    regex/i (desc is an extended regular expression)
+#          The same as regex but with case insensitive.
+#
+#    type  (file matches this if `file %f` matches regular expression desc
+#          (the filename: part from `file %f` is removed))
+#
+#    type/i (file matches this if `file %f` matches regular expression desc)
+#          The same as type but with case insensitive.
+#
+#    directory (matches any directory matching regular expression desc)
+#
+#    include (matches an include directive)
+#
+#    default (matches any file no matter what desc is)
+#
+# Other lines should start with a space or tab and should be in the format:
+#
+# keyword=commandNL (with no spaces around =), where keyword should be:
+#
+#    Open (if the user presses Enter or doubleclicks it),
+#
+#    View (F3), Edit (F4)
+#
+#    Include is the keyword used to add any further entries from an include/
+#    section
+#
+# command is any one-line shell command, with the following substitutions:
+#
+# %% -> % character
+# %p -> name of the current file (without path, but pwd is its path).
+#       Also provided to external application as MC_EXT_BASENAME
+#       global variable
+# %f -> name of the current file. Unlike %p, if file is located on a
+#	non-local virtual filesystem, i.e. either tarfs or ftpfs,
+#	then the file will be temporarily copied into a local directory
+#	and %f will be the full path to this local temporal file.
+#	If you don't want to get a local copy and want to get the
+#	virtual fs path (like /#ftp:ftp.cvut.cz/pub/hungry/xword), then
+#	use %d/%p instead of %f.
+#       Also provided to external application as MC_EXT_FILENAME
+#       global variable
+# %d -> name of the current directory (pwd, without trailing slash)
+#       Also provided to external application as MC_EXT_CURRENTDIR
+#       global variable
+# %s -> "selected files", i.e. space separated list of tagged files if any
+#       or name of the current file.
+#       Also provided to external application as MC_EXT_SELECTED
+#       global variable
+# %t -> list of tagged files
+#       Also provided to external application as MC_EXT_ONLYTAGGED
+#       global variable
+# %u -> list of tagged files (they'll be untaged after the command)
+#
+# (If these 6 letters are in uppercase, they refer to the other panel.
+# But you shouldn't have to use it in this file.)
+#
+#
+# %cd -> the rest is a path mc should change into (cd won't work, since it's
+#	a child process).  %cd handles even vfs names.
+#
+# %view -> the command you type will be piped into mc's internal file viewer
+#	if you type only the %view and no command, viewer will load %f file
+#	instead (i.e. no piping, so it is different to %view cat %f)
+#	%view may be directly followed by {} with a list of any of
+#	ascii (Ascii mode), hex (Hex mode), nroff (color highlighting for
+#	text using backspace for bold and underscore) and unform
+#	(no highlighting for nroff sequences) separated by commas.
+#
+# %var -> You use it like this: %var{VAR:default}.  This macro will expand
+#       to the value of the VAR variable in the environment if it's set
+#       otherwise the value in default will be used.  This is similar to
+#       the Bourne shell ${VAR-default} construct.
+#
+# Rules are applied from top to bottom, thus the order is important.
+# If some actions are missing, search continues as if this target didn't
+# match (i.e. if a file matches the first and second entry and View action
+# is missing in the first one, then on pressing F3 the View action from
+# the second entry will be used. default should catch all the actions.
+#
+# Any new entries you develop for you are always welcome if they are
+# useful on more than one system.  You can post your modifications
+# as tickets at www.midnight-commander.org
+
+
+regex/\.(.*)$
+        Open=(open %f &)
+
+### EOF ###

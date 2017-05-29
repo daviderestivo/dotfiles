@@ -1,9 +1,11 @@
 # dotfiles
 
-This repo collects my personal dotfiles:
+This repo collects my personal dotfiles for macOS. These dotfile can be used on GNU/Linux as well with some minor changes:
+
 - .bashrc
 - .bash_profile
 - .tmux.conf
+- mc.ext
 
 In addition you can find some very simple tmuxinator config files:
 
@@ -22,7 +24,7 @@ git submodule foreach --recursive git checkout master
 
 ### Install cmake and compile tmux-mem-cpu-load
 
-``` 
+```
 # Install cmake if not done before
 brew install cmake
 
@@ -40,7 +42,7 @@ make
 cd ~
 
 # Backup your current dotfiles
-cp .bash_profile .bash_profile.orig 
+cp .bash_profile .bash_profile.orig
 cp .bashrc .bashrc.orig
 cp .tmux.conf .tmux.conf.orig
 
@@ -48,6 +50,7 @@ cp .tmux.conf .tmux.conf.orig
 ln -s .dotfiles/bash_profile .bash_profile
 ln -s .dotfiles/bashrc .bashrc
 ln -s .dotfiles/tmux/tmux.conf .tmux.conf
+ln -s .dotfiles/mc/mc.ext mc.ext
 ```
 
 ### Personalize your .bashrc
