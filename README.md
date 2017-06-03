@@ -42,15 +42,15 @@ make
 cd ~
 
 # Backup your current dotfiles
-cp .bash_profile .bash_profile.orig
-cp .bashrc .bashrc.orig
-cp .tmux.conf .tmux.conf.orig
+cp ~/.bash_profile ~/.bash_profile.orig
+cp ~/.bashrc ~/.bashrc.orig
+cp ~/.tmux.conf ~/.tmux.conf.orig
 
 # Use the ones provided by this repo
-ln -s .dotfiles/bash_profile .bash_profile
-ln -s .dotfiles/bashrc .bashrc
-ln -s .dotfiles/tmux/tmux.conf .tmux.conf
-ln -s .dotfiles/mc/mc.ext .config/mc/mc.ext
+ln -s ~/.dotfiles/bash_profile ~/.bash_profile
+ln -s ~/.dotfiles/bashrc ~/.bashrc
+ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/mc/mc.ext ~/.config/mc/mc.ext
 ```
 
 ### Personalize your .bashrc
