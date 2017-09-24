@@ -1,11 +1,13 @@
 # dotfiles
 
-This repo collects my personal dotfiles for macOS. These dotfiles can be used on GNU/Linux as well with some minor changes:
+This repo collects my personal dotfiles for macOS. These dotfiles can
+be used on GNU/Linux as well with some minor changes:
 
 - .bashrc
 - .bash_profile
 - .tmux.conf
 - mc.ext
+- mc ini file
 
 In addition you can find some very simple tmuxinator config files:
 
@@ -51,6 +53,7 @@ ln -s ~/.dotfiles/bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/bashrc ~/.bashrc
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/mc/mc.ext ~/.config/mc/mc.ext
+ln -s ~/.dotfiles/mc/ini  ~/.config/mc/ini
 ```
 
 ### Personalize your .bashrc
@@ -66,7 +69,8 @@ and add them there.
 
 ### Note for GNU/Linux users
 
-- Please comment out the below line in tmux.conf in case you run tmux in GNU/Linux:
+- Please comment out the below line in tmux.conf in case you run tmux
+  in GNU/Linux:
 
   ```
   set -g default-command "reattach-to-user-namespace -l ${SHELL}"
