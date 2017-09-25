@@ -50,11 +50,12 @@ cp ~/.tmux.conf ~/.tmux.conf.orig
 cp ~/.config/mc/ini ~/.config/mc/ini.orig
 
 # Use the ones provided by this repo
-ln -sf ~/.dotfiles/bash_profile ~/.bash_profile
-ln -sf ~/.dotfiles/bashrc ~/.bashrc
-ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/mc/mc.ext ~/.config/mc/mc.ext
-ln -sf ~/.dotfiles/mc/ini  ~/.config/mc/ini
+cd ~
+ln -sf ~/.dotfiles/bash_profile .bash_profile
+ln -sf ~/.dotfiles/bashrc .bashrc
+ln -sf ~/.dotfiles/tmux/tmux.conf .tmux.conf
+ln -sf ~/.dotfiles/mc/mc.ext .config/mc/mc.ext
+ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ```
 
 ### Personalize your .bashrc
