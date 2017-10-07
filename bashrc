@@ -146,6 +146,7 @@ alias sshx='ssh -X'
 alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
 alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 alias oc='octave-cli'
+alias bup='brew upgrade --fetch-HEAD'
 
 ##############################
 # Load bash completion files #
