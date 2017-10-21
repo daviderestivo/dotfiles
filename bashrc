@@ -147,6 +147,7 @@ alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall
 alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 alias oc='octave-cli'
 alias bup='brew upgrade --fetch-HEAD'
+alias unquarantine='xattr -r -d com.apple.quarantine'
 
 ##############################
 # Load bash completion files #
