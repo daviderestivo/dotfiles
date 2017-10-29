@@ -138,6 +138,7 @@ alias ta='tmux attach -t' # tmux attach
 alias tl='tmux ls' # tmux list
 
 # various aliases
+alias ec='/usr/local/bin/emacsclient --no-wait -c -a /usr/local/bin/emacs'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias ll='ls -l'
 alias la='ls -al'
