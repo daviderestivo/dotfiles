@@ -42,7 +42,7 @@ export PATH="~/.gem/ruby/2.0.0/bin:$PATH"
 # Add TMUX Plugin Manager bin dir to the PATH
 export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
 
-# Add basictex bin dir to the PATH
+# Add mactex bin dir to the PATH
 export PATH="/Library/TeX/texbin/:$PATH"
 
 # Set EDITOR
