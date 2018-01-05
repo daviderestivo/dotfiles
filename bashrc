@@ -129,8 +129,8 @@ alias c6='minicom -D unix#/tmp/rtr06.pipe'
 alias c7='minicom -D unix#/tmp/rtr07.pipe'
 alias c8='minicom -D unix#/tmp/rtr08.pipe'
 
-# Lefacy SSH with DH Group1
-alias sshl='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1'
+# Legacy SSH with DH Group1 + Old CBC ciphers
+alias sshl='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oCiphers=+aes128-cbc,aes192-cbc,aes256-cbc'
 
 # tmux aliases
 alias ts='tmux' # tmux start
