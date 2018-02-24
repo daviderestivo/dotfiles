@@ -151,6 +151,7 @@ alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killa
 alias oc='octave-cli'
 alias bup='brew upgrade --fetch-HEAD'
 alias unquarantine='xattr -r -d com.apple.quarantine'
+alias umlet='/Applications/Umlet/umlet.sh'
 
 ##############################
 # Load bash completion files #
