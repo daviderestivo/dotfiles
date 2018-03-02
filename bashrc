@@ -45,6 +45,9 @@ export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
 # Add mactex bin dir to the PATH
 export PATH="/Library/TeX/texbin/:$PATH"
 
+# Add python2 bin dir to the PATH
+export PATH="/usr/local/opt/python@2/bin:$PATH"
+
 # Set EDITOR
 export EDITOR="emacs"
 
