@@ -66,9 +66,9 @@ pip_list_outdated() {
 	return 1
     fi
     if [ "$1" = "2" ]; then
-        pip2 list --outdated --format=legacy | awk '{print $1}'
+        pip2 list --outdated | awk 'NR > 2 {print $1}'
     elif [ "$1" = "3" ]; then
-	pip3 list --outdated --format=legacy | awk '{print $1}'
+	pip3 list --outdated | awk 'NR > 2 {print $1}'
     else
 	echo "A simple bash function to list all of the outdated python Eggs."
 	echo "Usage: pip_list_outdated <version>"
