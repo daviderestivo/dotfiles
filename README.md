@@ -8,6 +8,7 @@ be used on GNU/Linux as well with some minor changes:
 - .tmux.conf
 - mc.ext
 - mc ini file
+- rtv.cfg
 
 In addition you can find some very simple tmuxinator config files:
 
@@ -23,8 +24,8 @@ git submodule init
 git submodule update
 git submodule foreach --recursive git checkout master
 ```
-
 ### Install cmake and compile tmux-mem-cpu-load
+
 
 ```
 # Install cmake if not done before
@@ -43,11 +44,16 @@ make
 # Move to your homedir
 cd ~
 
+# Create directories
+mkdir -p ~/.config/mc
+mkdir -p ~/.config/rtv
+
 # Backup your current dotfiles
 cp ~/.bash_profile ~/.bash_profile.orig
 cp ~/.bashrc ~/.bashrc.orig
 cp ~/.tmux.conf ~/.tmux.conf.orig
 cp ~/.config/mc/ini ~/.config/mc/ini.orig
+cp ~/.config/rtv/rtv.cfg ~/.config/rtv/rtv.cfg.orig
 
 # Use the ones provided by this repo
 cd ~
@@ -56,6 +62,7 @@ ln -sf ~/.dotfiles/bashrc .bashrc
 ln -sf ~/.dotfiles/tmux/tmux.conf .tmux.conf
 ln -sf ~/.dotfiles/mc/mc.ext .config/mc/mc.ext
 ln -sf ~/.dotfiles/mc/ini .config/mc/ini
+ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ```
 
 ### Personalize your .bashrc
