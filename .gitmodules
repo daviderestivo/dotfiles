@@ -13,3 +13,6 @@
 [submodule "tmux-prefix-highlight"]
         path = tmux/plugins/tmux-prefix-highlight
         url = https://github.com/tmux-plugins/tmux-prefix-highlight
+[submodule "eless"]
+	path = eless
+	url = https://github.com/kaushalmodi/eless

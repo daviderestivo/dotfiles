@@ -63,6 +63,7 @@ ln -sf ~/.dotfiles/tmux/tmux.conf .tmux.conf
 ln -sf ~/.dotfiles/mc/mc.ext .config/mc/mc.ext
 ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
+ln -sf ~/.dotfiles/eless/eless ~/bin/eless
 ```
 
 ### Personalize your .bashrc
