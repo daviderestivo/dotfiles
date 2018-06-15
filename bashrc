@@ -90,20 +90,30 @@ pip_update() {
 	return 1
     fi
     if [ "$1" = "2" ]; then
-        LIST=$(pip_list_outdated 2)
+        LIST=$(comm -3 <(pip_list_outdated 2 | sort) <(cat ~/.pip_update2.blacklist | grep -v \# | sort))
         if [ "X$LIST" != "X"  ]; then
             echo $LIST
             pip2 install -U $LIST
         else
-            echo "All packages are up-to-date!"
+            BLACKLISTED_PACKAGES=`cat ~/.pip_update2.blacklist | grep \#`
+            if [ "$BLACKLISTED_PACKAGES" != "0" ]; then
+                echo "Some packages were not updated. Please have a look into ~/.pip_update2.blacklist"
+            else
+                echo "All packages are up-to-date!"
+            fi
         fi
     elif [ "$1" = "3" ]; then
-	LIST=$(pip_list_outdated 3)
+        LIST=$(comm -3 <(pip_list_outdated 3 | sort) <(cat ~/.pip_update3.blacklist | grep -v \# | sort))
         if [ "X$LIST" != "X"  ]; then
             echo $LIST
             pip3 install -U $LIST
         else
-            echo "All packages are up-to-date!"
+            BLACKLISTED_PACKAGES=`cat ~/.pip_update3.blacklist | grep \#`
+            if [ "$BLACKLISTED_PACKAGES" != "0" ]; then
+                echo "Some packages were not updated. Please have a look into ~/.pip_update3.blacklist"
+            else
+                echo "All packages are up-to-date!"
+            fi
         fi
     else
 	echo "A simple bash function to upgrade all of the python Eggs installed via pip."
