@@ -90,7 +90,11 @@ pip_update() {
 	return 1
     fi
     if [ "$1" = "2" ]; then
-        LIST=$(comm -3 <(pip_list_outdated 2 | sort) <(cat ~/.pip_update2.blacklist | grep -v \# | sort))
+        if [ -f ~/.pip_update2.blacklist ]; then
+            LIST=$(comm -3 <(pip_list_outdated 2 | sort) <(cat ~/.pip_update2.blacklist | grep -v \# | sort))
+        else
+            LIST=$(pip_list_outdated 2)
+        fi
         if [ "X$LIST" != "X"  ]; then
             echo $LIST
             pip2 install -U $LIST
@@ -102,8 +106,12 @@ pip_update() {
                 echo "All packages are up-to-date!"
             fi
         fi
-    elif [ "$1" = "3" ]; then
-        LIST=$(comm -3 <(pip_list_outdated 3 | sort) <(cat ~/.pip_update3.blacklist | grep -v \# | sort))
+        elif [ "$1" = "3" ]; then
+            if [ -f ~/.pip_update3.blacklist ]; then
+                LIST=$(comm -3 <(pip_list_outdated 3 | sort) <(cat ~/.pip_update3.blacklist | grep -v \# | sort))
+            else
+                LIST=$(pip_list_outdated 3)
+            fi
         if [ "X$LIST" != "X"  ]; then
             echo $LIST
             pip3 install -U $LIST
