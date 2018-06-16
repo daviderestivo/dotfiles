@@ -14,6 +14,12 @@ In addition you can find some very simple tmuxinator config files:
 
 - tmuxinator/*.yml
 
+# Current software
+- eless [[Link](https://eless.scripter.co)]
+- mc [[Link](https://midnight-commander.org)]
+- rtv [[Link](https://github.com/michael-lazar/rtv)]
+- tmux [[Link](https://github.com/tmux/tmux/wiki)]
+
 ## Installation
 
 ### Clone the repo
