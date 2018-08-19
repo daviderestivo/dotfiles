@@ -19,6 +19,7 @@ In addition you can find some very simple tmuxinator config files:
 - mc [[Link](https://midnight-commander.org)]
 - rtv [[Link](https://github.com/michael-lazar/rtv)]
 - tmux [[Link](https://github.com/tmux/tmux/wiki)]
+- iTerm2 [[Link](https://www.iterm2.com)]
 
 ## Installation
 
@@ -71,6 +72,11 @@ ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ln -sf ~/.dotfiles/eless/eless ~/bin/eless
 ```
+
+### Configure iTerm2
+
+Open iTerm2 settings and in the "General" section toggle "Load preferences from
+a custom folder or URL" and choose "~/.dotfiles/iterm2" as folder location.
 
 ### Personalize your .bashrc
 
