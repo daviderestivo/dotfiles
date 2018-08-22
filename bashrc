@@ -172,7 +172,7 @@ alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall
 alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 alias oc='octave-cli'
 alias bupgrade='brew upgrade --fetch-HEAD && brew cask upgrade'
-alias bclean='brew cleanup -s --force && brew cask cleanup'
+alias bclean='brew cleanup -s'
 alias unquarantine='xattr -r -d com.apple.quarantine'
 alias umlet='/Applications/Umlet/umlet.sh'
 
