@@ -19,3 +19,27 @@
 [submodule "tmux/plugins/tmux-better-mouse-mode"]
 	path = tmux/plugins/tmux-better-mouse-mode
 	url = https://github.com/NHDaly/tmux-better-mouse-mode
+[submodule "magit/packages/dash.el"]
+	path = magit/packages/dash.el
+	url = https://github.com/magnars/dash.el
+[submodule "magit/packages/ghub"]
+	path = magit/packages/ghub
+	url = https://github.com/magit/ghub
+[submodule "magit/packages/graphql.el"]
+	path = magit/packages/graphql.el
+	url = https://github.com/vermiculus/graphql.el
+[submodule "magit/packages/magit"]
+	path = magit/packages/magit
+	url = https://github.com/magit/magit
+[submodule "magit/packages/magit-org-todos.el"]
+	path = magit/packages/magit-org-todos.el
+	url = https://github.com/danielma/magit-org-todos.el
+[submodule "magit/packages/magit-popup"]
+	path = magit/packages/magit-popup
+	url = https://github.com/magit/magit-popup
+[submodule "magit/packages/treepy.el"]
+	path = magit/packages/treepy.el
+	url = https://github.com/volrath/treepy.el
+[submodule "magit/packages/with-editor"]
+	path = magit/packages/with-editor
+	url = https://github.com/magit/with-editor
