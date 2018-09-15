@@ -176,6 +176,9 @@ alias bhupgrade='brew upgrade --fetch-HEAD && brew cask upgrade'
 alias bclean='brew cleanup -s'
 alias unquarantine='xattr -r -d com.apple.quarantine'
 alias umlet='/Applications/Umlet/umlet.sh'
+alias magit="emacs --no-window-system --no-init-file \
+      --load ~/.dotfiles/magit/magit-init.el \
+      --eval '(progn (magit-status) (delete-other-windows))'"
 
 ##############################
 # Load bash completion files #

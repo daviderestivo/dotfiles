@@ -1,5 +1,5 @@
 [submodule "tpm"]
-	path = tmux/plugins/tpm
+        path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "tmux-battery"]
 	path = tmux/plugins/tmux-battery
@@ -16,3 +16,27 @@
 [submodule "eless"]
 	path = eless
 	url = https://github.com/kaushalmodi/eless
+[submodule "dash.el"]
+	path = magit/packages/dash.el
+	url = https://github.com/magnars/dash.el
+[submodule "ghub"]
+	path = magit/packages/ghub
+	url = https://github.com/magit/ghub
+[submodule "graphql.el"]
+	path = magit/packages/graphql.el
+	url = https://github.com/vermiculus/graphql.el
+[submodule "magit"]
+	path = magit/packages/magit
+	url = https://github.com/magit/magit
+[submodule "magit-org-todos.el"]
+	path = magit/packages/magit-org-todos.el
+	url = https://github.com/danielma/magit-org-todos.el
+[submodule "magit-popup"]
+	path = magit/packages/magit-popup
+	url = https://github.com/magit/magit-popup
+[submodule "treepy.el"]
+	path = magit/packages/treepy.el
+	url = https://github.com/volrath/treepy.el
+[submodule "with-editor"]
+	path = magit/packages/with-editor
+	url = https://github.com/magit/with-editor
