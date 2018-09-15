@@ -97,10 +97,6 @@
 ;; Use visual bell instead of audio
 (setq visible-bell 1)
 
-;; By default, Emacs thinks a sentence is a full-stop followed by 2
-;; spaces. Let’s make it full-stop and 1 space.
-(setq sentence-end-double-space nil)
-
 ;; Disable the toolbar and the scroll-bar.
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -108,8 +104,10 @@
 ;; Turn on highlighting current line
 (global-hl-line-mode 1)
 
+;; Load a better theme than the default
 (load-theme 'tango-dark)
 
+;; Load magit and all related dependencies
 (add-to-list 'load-path "~/.dotfiles/magit/packages/dash.el")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/with-editor")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/magit-popup")
@@ -117,6 +115,9 @@
 (add-to-list 'load-path "~/.dotfiles/magit/packages/graphql.el")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/treepy.el")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/magit/lisp")
-(require 'magit)
 (add-to-list 'load-path "~/.dotfiles/magit/packages/magit-org-todos.el")
+(require 'magit)
 (require 'magit-org-todos)
+
+
+;;; magit-init.el ends here
