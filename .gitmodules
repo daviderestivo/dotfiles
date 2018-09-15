@@ -1,42 +1,42 @@
-[submodule "tpm"]
+[submodule "tmux/plugins/tpm"]
         path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "tmux-battery"]
+[submodule "tmux/plugins/tmux-battery"]
 	path = tmux/plugins/tmux-battery
 	url = https://github.com/tmux-plugins/tmux-battery
-[submodule "tmux-mem-cpu-load"]
+[submodule "tmux/plugins/tmux-mem-cpu-load"]
 	path = tmux/plugins/tmux-mem-cpu-load
 	url = https://github.com/thewtex/tmux-mem-cpu-load
-[submodule "tmux-logging"]
+[submodule "tmux/plugins/tmux-logging"]
 	path = tmux/plugins/tmux-logging
 	url = https://github.com/tmux-plugins/tmux-logging
-[submodule "tmux-prefix-highlight"]
+[submodule "tmux/plugins/tmux-prefix-highlight"]
         path = tmux/plugins/tmux-prefix-highlight
         url = https://github.com/tmux-plugins/tmux-prefix-highlight
 [submodule "eless"]
 	path = eless
 	url = https://github.com/kaushalmodi/eless
-[submodule "dash.el"]
+[submodule "magit/packages/dash.el"]
 	path = magit/packages/dash.el
 	url = https://github.com/magnars/dash.el
-[submodule "ghub"]
+[submodule "magit/packages/ghub"]
 	path = magit/packages/ghub
 	url = https://github.com/magit/ghub
-[submodule "graphql.el"]
+[submodule "magit/packages/graphql.el"]
 	path = magit/packages/graphql.el
 	url = https://github.com/vermiculus/graphql.el
-[submodule "magit"]
+[submodule "magit/packages/magit"]
 	path = magit/packages/magit
 	url = https://github.com/magit/magit
-[submodule "magit-org-todos.el"]
+[submodule "magit/packages/magit-org-todos.el"]
 	path = magit/packages/magit-org-todos.el
 	url = https://github.com/danielma/magit-org-todos.el
-[submodule "magit-popup"]
+[submodule "magit/packages/magit-popup"]
 	path = magit/packages/magit-popup
 	url = https://github.com/magit/magit-popup
-[submodule "treepy.el"]
+[submodule "magit/packages/treepy.el"]
 	path = magit/packages/treepy.el
 	url = https://github.com/volrath/treepy.el
-[submodule "with-editor"]
+[submodule "magit/packages/with-editor"]
 	path = magit/packages/with-editor
 	url = https://github.com/magit/with-editor
