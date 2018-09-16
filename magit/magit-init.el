@@ -119,5 +119,10 @@
 (require 'magit)
 (require 'magit-org-todos)
 
+;;; Magit configuration
+
+;; Expand "unpushed to upstream or recent" magit section
+(push (cons [unpushed status] 'show) magit-section-initial-visibility-alist)
+
 
 ;;; magit-init.el ends here
