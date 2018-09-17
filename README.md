@@ -1,5 +1,4 @@
 # dotfiles
-
 This repo collects my personal dotfiles for macOS. These dotfiles can
 be used on GNU/Linux as well with some minor changes:
 
@@ -9,22 +8,40 @@ be used on GNU/Linux as well with some minor changes:
 - mc.ext
 - mc ini file
 - rtv.cfg
+- magit (Emacs required)
 
 In addition you can find some very simple tmuxinator config files:
 
 - tmuxinator/*.yml
 
 # Current software
-- eless [[Link](https://eless.scripter.co)]
-- mc [[Link](https://midnight-commander.org)]
-- rtv [[Link](https://github.com/michael-lazar/rtv)]
-- tmux [[Link](https://github.com/tmux/tmux/wiki)]
-- iTerm2 [[Link](https://www.iterm2.com)]
+## eless [[Link](https://eless.scripter.co)]
+
+
+## mc [[Link](https://midnight-commander.org)]
+
+
+## rtv [[Link](https://github.com/michael-lazar/rtv)]
+
+## tmux [[Link](https://github.com/tmux/tmux/wiki)]
+
+
+## iTerm2 [[Link](https://www.iterm2.com)]
+
+
+## magit [[Link](https://magit.vc)]
+Emacs is required in order to use magit from console.
+
+![Magit](https://raw.githubusercontent.com/daviderestivo/dotfiles/master/screenshots/magit.png)
+
+
+``` bash
+brew reinstall emacs --HEAD --with-librsvg --with-cocoa --with-imagemagick@6
+```
 
 ## Installation
-
 ### Clone the repo
-```
+``` bash
 git clone https://github.com/daviderestivo/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 git submodule init
@@ -32,9 +49,7 @@ git submodule update
 git submodule foreach --recursive git checkout master
 ```
 ### Install cmake and compile tmux-mem-cpu-load
-
-
-```
+``` bash
 # Install cmake if not done before
 brew install cmake
 
@@ -46,8 +61,7 @@ make
 
 
 ### Link the dotfiles
-
-```
+``` bash
 # Move to your homedir
 cd ~
 
@@ -74,27 +88,24 @@ ln -sf ~/.dotfiles/eless/eless ~/bin/eless
 ```
 
 ### Configure iTerm2
-
 Open iTerm2 settings and in the "General" section toggle "Load preferences from
 a custom folder or URL" and choose "~/.dotfiles/iterm2" as folder location.
 
 ### Personalize your .bashrc
-
 If you wish to add additional .bashrc related configurations/aliases you can
 simply create a new .bashrc_personal:
 
-```
+``` bash
 touch  ~/.bashrc_personal
 ```
 
 and add them there.
 
 ### Note for GNU/Linux users
-
 - Please comment out the below line in tmux.conf in case you run tmux
   in GNU/Linux:
 
-  ```
+  ``` bash
   set -g default-command "reattach-to-user-namespace -l ${SHELL}"
   ```
 
