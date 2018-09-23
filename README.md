@@ -1,4 +1,7 @@
 # dotfiles
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 This repo collects my personal dotfiles for macOS. These dotfiles can
 be used on GNU/Linux as well with some minor changes:
 
