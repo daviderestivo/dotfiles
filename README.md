@@ -17,30 +17,13 @@ In addition you can find some very simple tmuxinator config files:
 
 - tmuxinator/*.yml
 
-# Current software
-## eless [[Link](https://eless.scripter.co)]
-
-
-## mc [[Link](https://midnight-commander.org)]
-
-
-## rtv [[Link](https://github.com/michael-lazar/rtv)]
-
-## tmux [[Link](https://github.com/tmux/tmux/wiki)]
-
-
-## iTerm2 [[Link](https://www.iterm2.com)]
-
-
-## magit [[Link](https://magit.vc)]
-Emacs is required in order to use magit from console.
-
-![Magit](https://raw.githubusercontent.com/daviderestivo/dotfiles/master/screenshots/magit.png)
-
-
-``` bash
-brew reinstall emacs --HEAD --with-librsvg --with-cocoa --with-imagemagick@6
-```
+## Current software
+- eless [[Link](https://eless.scripter.co)]
+- mc [[Link](https://midnight-commander.org)]
+- rtv [[Link](https://github.com/michael-lazar/rtv)]
+- tmux [[Link](https://github.com/tmux/tmux/wiki)]
+- iTerm2 [[Link](https://www.iterm2.com)]
+- magit [[Link](https://magit.vc)]
 
 ## Installation
 ### Clone the repo
@@ -51,6 +34,7 @@ git submodule init
 git submodule update
 git submodule foreach --recursive git checkout master
 ```
+
 ### Install cmake and compile tmux-mem-cpu-load
 ``` bash
 # Install cmake if not done before
@@ -61,6 +45,15 @@ cd  ~/.dotfiles/tmux/plugins/tmux-mem-cpu-load
 cmake .
 make
 ```
+
+### Install Emacs (only if interested in magit)
+Emacs is required in order to use magit from console.
+
+``` bash
+brew reinstall emacs --HEAD --with-librsvg --with-cocoa --with-imagemagick@6
+```
+
+![Magit](https://raw.githubusercontent.com/daviderestivo/dotfiles/master/screenshots/magit.png)
 
 
 ### Link the dotfiles
