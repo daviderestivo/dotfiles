@@ -107,6 +107,13 @@
 ;; Load a better theme than the default
 (load-theme 'tango-dark)
 
+;; Insert date function
+(defun drestivo/insert-date ()
+  (interactive)
+  "Insert current datetime into buffer without a newline."
+  (insert (concat "Date: " (shell-command-to-string "printf %s \"$(date)\""))))
+(global-set-key (kbd "C-+") 'drestivo/insert-date)
+
 ;; Load magit and all related dependencies
 (add-to-list 'load-path "~/.dotfiles/magit/packages/dash.el")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/with-editor")
