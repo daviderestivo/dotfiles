@@ -112,7 +112,7 @@
   (interactive)
   "Insert current datetime into buffer without a newline."
   (insert (concat "Date: " (shell-command-to-string "printf %s \"$(date)\""))))
-(global-set-key (kbd "C-+") 'drestivo/insert-date)
+(global-set-key (kbd "M-+") 'drestivo/insert-date)
 
 ;; Load magit and all related dependencies
 (add-to-list 'load-path "~/.dotfiles/magit/packages/dash.el")
