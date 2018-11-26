@@ -210,6 +210,6 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 #######################
 # Add personal config #
 #######################
-if [ -f ~/.bashrc_personal ]; then
-    . ~/.bashrc_personal
+if [ -f ~/.bash_personal ]; then
+    . ~/.bash_personal
 fi
