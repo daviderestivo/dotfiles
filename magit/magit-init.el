@@ -6,7 +6,7 @@
 ;; Author: Davide Restivo <davide.restivo@yahoo.it>
 ;; Maintainer: Davide Restivo <davide.restivo@yahoo.it>
 ;; URL: https://github.com/daviderestivo/dotfiles
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Keywords: emacs config magit bash
 
 
@@ -103,6 +103,9 @@
 
 ;; Turn on highlighting current line
 (global-hl-line-mode 1)
+
+;; Fix <DEL> fails to delete on a terminal
+(normal-erase-is-backspace-mode 1)
 
 ;; Load a better theme than the default
 (load-theme 'tango-dark)
