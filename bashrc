@@ -162,6 +162,7 @@ alias ta='tmux attach -t' # tmux attach
 alias tl='tmux ls' # tmux list
 
 # various aliases
+alias o="open"
 alias man='man -P eless'
 alias ec='/usr/local/bin/emacsclient --no-wait -c -a /usr/local/bin/emacs'
 alias ll='ls -l'
