@@ -36,6 +36,8 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Add ~/bin and ~/.local/bin/ to the PATH
 export PATH="~/.local/bin:~/bin:$PATH"
 
+# Add ruby bin dir to the PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Add TMUX Plugin Manager bin dir to the PATH
 export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
