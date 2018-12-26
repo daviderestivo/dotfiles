@@ -162,7 +162,7 @@ alias ta='tmux attach -t' # tmux attach
 alias tl='tmux ls' # tmux list
 
 # various aliases
-alias o="open"
+alias o='open'
 alias man='man -P eless'
 alias ec='/usr/local/bin/emacsclient --no-wait -c -a /usr/local/bin/emacs'
 alias ll='ls -l'
@@ -180,6 +180,8 @@ alias umlet='/Applications/Umlet/umlet.sh'
 alias magit="emacs --no-window-system --no-init-file \
       --load ~/.dotfiles/magit/magit-init.el \
       --eval '(progn (magit-status) (delete-other-windows))'"
+alias git-update-submodules='git submodule foreach --recursive git checkout master && \
+      git submodule foreach --recursive git pull'
 
 ##############################
 # Load bash completion files #
