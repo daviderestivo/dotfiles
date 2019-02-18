@@ -139,6 +139,24 @@ pwdgen(){
     openssl rand -base64 $1
 }
 
+# Create a Maven project
+
+mvn-create-project() {
+    # If arguments list is empty, print usage menu an exit
+    if [ "$#" -ne 2 ]; then
+	echo "A simple bash function to create a Maven project."
+	echo "Usage: mvn-create-project groupId artifactId"
+	echo ""
+	echo "Example:"
+	echo "         mvn com.mycompany.app my-app"
+	return 1
+    fi
+    # Call maven
+    mvn archetype:generate -DgroupId=$1 -DartifactId=$2  \
+        -DarchetypeArtifactId=maven-archetype-quickstart \
+        -DarchetypeVersion=1.4 -DinteractiveMode=false
+}
+
 ###########
 # ALIASES #
 ###########
