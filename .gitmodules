@@ -43,3 +43,9 @@
 [submodule "magit/packages/with-editor"]
 	path = magit/packages/with-editor
 	url = https://github.com/magit/with-editor
+[submodule "magit/packages/transient"]
+	path = magit/packages/transient
+	url = https://github.com/magit/transient
+[submodule "magit/packages/hydra"]
+	path = magit/packages/hydra
+	url = https://github.com/abo-abo/hydra/

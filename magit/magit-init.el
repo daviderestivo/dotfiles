@@ -118,6 +118,8 @@
 (global-set-key (kbd "M-+") 'drestivo/insert-date)
 
 ;; Load magit and all related dependencies
+(add-to-list 'load-path "~/.dotfiles/magit/packages/transient/lisp")
+(add-to-list 'load-path "~/.dotfiles/magit/packages/hydra")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/dash.el")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/with-editor")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/magit-popup")
@@ -126,6 +128,7 @@
 (add-to-list 'load-path "~/.dotfiles/magit/packages/treepy.el")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/magit/lisp")
 (add-to-list 'load-path "~/.dotfiles/magit/packages/magit-org-todos.el")
+
 (require 'magit)
 (require 'magit-org-todos)
 
