@@ -148,7 +148,7 @@ mvn-create-project() {
 	echo "Usage: mvn-create-project groupId artifactId"
 	echo ""
 	echo "Example:"
-	echo "         mvn com.mycompany.app my-app"
+	echo "         mvn-create-project com.mycompany.my-app my-app"
 	return 1
     fi
     # Call maven
