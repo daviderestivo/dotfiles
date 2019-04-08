@@ -234,3 +234,6 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 if [ -f ~/.bash_personal ]; then
     . ~/.bash_personal
 fi
+
+# added by travis gem
+[ -f /Users/taareda4/.travis/travis.sh ] && source /Users/taareda4/.travis/travis.sh
