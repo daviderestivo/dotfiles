@@ -139,7 +139,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 485 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 60 1680 961 0 0 1680 1027 </string>
+	<string>0 440 985 587 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_824F01DD-8815-4523-8208-1CB88D0355FB</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_824F01DD-8815-4523-8208-1CB88D0355FB_selection</key>
@@ -927,12 +927,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{187, 819}</string>
+		<string>{108, 811}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>538E9FB7-B213-4E0B-BB6B-9EFB718747F8</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>24</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>575574732.16941404</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1580,7 +1580,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-01T07:11:10Z</date>
+	<date>2019-04-10T14:32:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -1605,6 +1605,8 @@
 	<integer>6</integer>
 	<key>TabStyle</key>
 	<integer>0</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
