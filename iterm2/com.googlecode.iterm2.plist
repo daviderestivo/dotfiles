@@ -934,7 +934,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>538E9FB7-B213-4E0B-BB6B-9EFB718747F8</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>25</integer>
+	<integer>26</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>575574732.16941404</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1602,7 +1602,7 @@
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.51665441301827608</real>
+	<real>0.33174472773458819</real>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
