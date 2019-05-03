@@ -201,18 +201,13 @@ alias magit="emacs --no-window-system --no-init-file \
 alias git-update-submodules='git submodule foreach --recursive git checkout master && \
       git submodule foreach --recursive git pull'
 
-##############################
-# Load bash completion files #
-##############################
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-    . /usr/local/share/bash-completion/bash_completion
-fi
-
-BASH_COMPLETION_PATH="/usr/local/etc/bash_completion.d"
-for file in $BASH_COMPLETION_PATH/*
-do
-    source $file
-done
+###################
+# Bash Completion #
+###################
+# Use existing homebrew v1 completions #
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+# Turn on homebre v2 bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 ###################################
 # Showing a fortune in each *term #
