@@ -133,6 +133,7 @@
 (require 'magit-org-todos)
 
 ;;; Magit configuration
+(global-set-key (kbd "<f2>") 'magit-status)
 
 ;; Expand "unpushed to upstream or recent" magit section
 (push (cons [unpushed status] 'show) magit-section-initial-visibility-alist)
