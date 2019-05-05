@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec emacs --no-window-system --no-init-file --load ~/.dotfiles/magit/magit-init.el "$@"

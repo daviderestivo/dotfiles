@@ -49,7 +49,7 @@ export PATH="/Library/TeX/texbin/:$PATH"
 export PATH="/usr/local/opt/python@2/bin:$PATH"
 
 # Set EDITOR
-export EDITOR="emacs"
+export EDITOR="${HOME}/bin/edit"
 
 ##################
 # BASH FUNCTIONS #
