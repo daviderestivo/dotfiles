@@ -103,6 +103,7 @@
 
 ;; Turn on highlighting current line
 (global-hl-line-mode 1)
+(set-face-background hl-line-face "gray70")
 
 ;; Fix <DEL> fails to delete on a terminal
 (normal-erase-is-backspace-mode 1)
