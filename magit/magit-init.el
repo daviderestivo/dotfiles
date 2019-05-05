@@ -108,6 +108,9 @@
 ;; Fix <DEL> fails to delete on a terminal
 (normal-erase-is-backspace-mode 1)
 
+;; Remap <f10>
+(global-set-key (kbd "<f10>") 'save-buffers-kill-terminal)
+
 ;; Load a better theme than the default
 (load-theme 'tango-dark)
 
