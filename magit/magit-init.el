@@ -114,6 +114,9 @@
 ;; Load a better theme than the default
 (load-theme 'tango-dark)
 
+;; Don't save backup files (~)
+(setq make-backup-files nil)
+
 ;; Insert date function
 (defun drestivo/insert-date ()
   (interactive)
