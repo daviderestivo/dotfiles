@@ -28,7 +28,7 @@ In addition you can find some very simple tmuxinator config files:
 ## Installation
 ### Clone the repo
 ``` bash
-git clone https://github.com/daviderestivo/dotfiles.git ~/.dotfiles
+git clone --depth 1 https://github.com/daviderestivo/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 git submodule init
 git submodule update
