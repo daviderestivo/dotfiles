@@ -200,6 +200,8 @@ alias magit="emacs --no-window-system --no-init-file \
       --eval '(progn (magit-status) (delete-other-windows))'"
 alias git-update-submodules='git submodule foreach --recursive git checkout master && \
       git submodule foreach --recursive git pull'
+# The below alias require realpath to be installed: `brew install coreutils`
+alias mc=". $(echo $(dirname $(realpath $(which mc))) | sed 's/bin//')/libexec/mc/mc-wrapper.sh"
 
 ###################
 # Bash Completion #
@@ -230,5 +232,11 @@ if [ -f ~/.bash_personal ]; then
     . ~/.bash_personal
 fi
 
-# added by travis gem
-[ -f /Users/taareda4/.travis/travis.sh ] && source /Users/taareda4/.travis/travis.sh
+###############################
+# Create GHCi launcher script #
+###############################
+if [ ! -f ~/bin/ghci ]; then
+    echo "#!/bin/bash" > ~/bin/ghci
+    echo "stack exec -- ghci $@" >> ~/bin/ghci
+    chmod +x ~/bin/ghci
+fi
