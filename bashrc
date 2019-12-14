@@ -45,8 +45,8 @@ export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
 # Add mactex bin dir to the PATH
 export PATH="/Library/TeX/texbin/:$PATH"
 
-# Add python2 bin dir to the PATH
-export PATH="/usr/local/opt/python@2/bin:$PATH"
+# Add python3 bin dir to the PATH
+export PATH="/usr/local/opt/python/bin:$PATH"
 
 # Set EDITOR
 export EDITOR="${HOME}/bin/edit"
@@ -61,8 +61,8 @@ pip_list_outdated() {
 	echo "A simple bash function to list all of the outdated python Eggs."
 	echo "Usage: pip_list_outdated <version>"
 	echo ""
-	echo "Example: pip_list_outdated 2"
-	echo "         List all of the python2 outdated Eggs"
+	echo "Example: pip_list_outdated 3"
+	echo "         List all of the python3 outdated Eggs"
 	return 1
     fi
     if [ "$1" = "2" ]; then
