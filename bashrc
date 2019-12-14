@@ -201,7 +201,7 @@ alias magit="emacs --no-window-system --no-init-file \
 alias git-update-submodules='git submodule foreach --recursive git checkout master && \
       git submodule foreach --recursive git pull'
 # The below alias require realpath to be installed: `brew install coreutils`
-alias mc=". $(echo $(dirname $(realpath $(which mc))) | sed 's/bin//')/libexec/mc/mc-wrapper.sh"
+alias mc=". $(echo $(dirname $(realpath $(which mc))) | sed 's/bin//')libexec/mc/mc-wrapper.sh"
 
 ###################
 # Bash Completion #
