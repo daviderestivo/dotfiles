@@ -1,7 +1,7 @@
 ;;; magit-init.el - A minimal Emacs config used for magit bash alias
 
 ;;
-;; Copyright (C) 2018-2019 Davide Restivo
+;; Copyright (C) 2018-2020 Davide Restivo
 ;;
 ;; Author: Davide Restivo <davide.restivo@yahoo.it>
 ;; Maintainer: Davide Restivo <davide.restivo@yahoo.it>
