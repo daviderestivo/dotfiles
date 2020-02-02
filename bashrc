@@ -183,6 +183,7 @@ alias tl='tmux ls' # tmux list
 alias o='open'
 alias man='man -P eless'
 alias ec='/usr/local/bin/emacsclient --no-wait -c -a /usr/local/bin/emacs'
+alias ep='/usr/local/bin/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
 alias ll='ls -l'
 alias la='ls -al'
 alias grep='grep --colour=auto'
