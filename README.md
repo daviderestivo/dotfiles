@@ -8,6 +8,7 @@ be used on GNU/Linux as well with some minor changes:
 - .bashrc
 - .bash_profile
 - .tmux.conf
+- bat config
 - mc.ext
 - mc ini file
 - rtv.cfg
@@ -71,6 +72,7 @@ cp ~/.bashrc ~/.bashrc.orig
 cp ~/.tmux.conf ~/.tmux.conf.orig
 cp ~/.config/mc/ini ~/.config/mc/ini.orig
 cp ~/.config/rtv/rtv.cfg ~/.config/rtv/rtv.cfg.orig
+cp ~/.config/bat/config ~/.config/bat/config.orig
 
 # Use the ones provided by this repo
 cd ~
@@ -78,6 +80,7 @@ ln -sf ~/.dotfiles/bash_profile .bash_profile
 ln -sf ~/.dotfiles/bashrc .bashrc
 ln -sf ~/.dotfiles/tmux/tmux.conf .tmux.conf
 ln -sf ~/.dotfiles/mc/mc.ext .config/mc/mc.ext
+ln -sf ~/.dotfiles/bat/config .config/bat/config
 ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ln -sf ~/.dotfiles/eless/eless ~/bin/eless
