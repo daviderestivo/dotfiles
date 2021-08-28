@@ -51,7 +51,8 @@ make
 Emacs is required in order to use magit from console.
 
 ``` bash
-brew reinstall emacs --HEAD --with-librsvg --with-cocoa --with-imagemagick@7
+brew tap daviderestivo/emacs-head
+brew install emacs-head@28 --with-cocoa --with-librsvg --with-imagemagick@7
 ```
 
 ![Magit](https://raw.githubusercontent.com/daviderestivo/dotfiles/master/screenshots/magit.png)
