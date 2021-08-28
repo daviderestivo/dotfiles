@@ -63,6 +63,8 @@ brew reinstall emacs --HEAD --with-librsvg --with-cocoa --with-imagemagick@7
 cd ~
 
 # Create directories
+mkdir -p ~/bin
+mkdir -p ~/.config/bat
 mkdir -p ~/.config/mc
 mkdir -p ~/.config/rtv
 
@@ -78,9 +80,9 @@ cp ~/.config/bat/config ~/.config/bat/config.orig
 cd ~
 ln -sf ~/.dotfiles/bash_profile .bash_profile
 ln -sf ~/.dotfiles/bashrc .bashrc
+ln -sf ~/.dotfiles/bat/config .config/bat/config
 ln -sf ~/.dotfiles/tmux/tmux.conf .tmux.conf
 ln -sf ~/.dotfiles/mc/mc.ext .config/mc/mc.ext
-ln -sf ~/.dotfiles/bat/config .config/bat/config
 ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ln -sf ~/.dotfiles/eless/eless ~/bin/eless
