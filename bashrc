@@ -204,7 +204,7 @@ alias git-update-submodules='git submodule foreach --recursive git checkout mast
 # The below alias require realpath to be installed: `brew install coreutils`
 alias mc=". $(echo $(dirname $(realpath $(which mc))) | sed 's/bin//')libexec/mc/mc-wrapper.sh"
 alias cat="bat"
-alias gcd='git commit -am "Date: $(date)"'
+alias gcd='git add . && git commit -m "Date: $(date)"'
 
 ###################
 # Bash Completion #
