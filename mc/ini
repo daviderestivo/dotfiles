@@ -85,6 +85,8 @@ skin=xoria256
 
 safe_overwrite=false
 
+shadows=true
+
 [Layout]
 message_visible=true
 keybar_visible=true

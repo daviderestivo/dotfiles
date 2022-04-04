@@ -29,15 +29,26 @@ export LC_CTYPE=en_US.UTF-8
 # Avoid cowsay for ansible
 export ANSIBLE_NOCOWS=1
 
-# Homebrew's formulae puts executables in /usr/local/bin and /usr/local/sbin
+# Homebrew's formulae puts executables either in /usr/local/bin and
+# /usr/local/sbin or /opt/homebrew/bin and /opt/homebrew/sbin (new dir
+# layout)
+
+# Please uncomment the line based in your setup export
+export HOMEBREW_BASEDIR="/opt/homebrew"
+# export HOMEBREW_BASEDIR="/opt/local"
+
+export HOMEBREW_BINDIR="$HOMEBREW_BASEDIR/bin:$HOMEBREW_BASEDIR/sbin"
+
+# Homebrew's formulae puts executables in /usr/local/bin /usr/local/sbin or
+# /opt/homebrew/bin and /opt/homebrew/sbin
 # Add both bin dirs to the PATH
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOMEBREW_BINDIR:$PATH"
 
 # Add ~/bin and ~/.local/bin/ to the PATH
 export PATH="~/.local/bin:~/bin:$PATH"
 
 # Add ruby bin dir to the PATH
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOMEBREW_BASEDIR/opt/ruby/bin:$PATH"p
 
 # Add TMUX Plugin Manager bin dir to the PATH
 export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
@@ -46,7 +57,7 @@ export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
 export PATH="/Library/TeX/texbin/:$PATH"
 
 # Add python3 bin dir to the PATH
-export PATH="/usr/local/opt/python/bin:$PATH"
+export PATH="$HOMEBREW_BASEDIR/opt/python/bin/:$PATH"
 
 # Set EDITOR
 export EDITOR="${HOME}/bin/edit"
@@ -140,7 +151,6 @@ pwdgen(){
 }
 
 # Create a Maven project
-
 mvn-create-project() {
     # If arguments list is empty, print usage menu an exit
     if [ "$#" -ne 2 ]; then
@@ -182,8 +192,8 @@ alias tl='tmux ls' # tmux list
 # various aliases
 alias o='open'
 alias man='man -P eless'
-alias ec='/usr/local/bin/emacsclient --no-wait'
-alias ep='/usr/local/bin/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
+alias ec='$HOMEBREW_BINDIR/emacsclient --no-wait'
+alias ep='$HOMEBREW_BINDIR/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
 alias ll='ls -l'
 alias la='ls -al'
 alias grep='grep --colour=auto'
@@ -203,16 +213,16 @@ alias git-update-submodules='git submodule foreach --recursive git checkout mast
       git submodule foreach --recursive git pull'
 # The below alias require realpath to be installed: `brew install coreutils`
 alias mc=". $(echo $(dirname $(realpath $(which mc))) | sed 's/bin//')libexec/mc/mc-wrapper.sh"
-alias cat="bat"
+#alias cat="bat"
 alias gcd='git add . && git commit -m "Date: $(date)"'
 
 ###################
 # Bash Completion #
 ###################
 # Use existing homebrew v1 completions #
-export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_BASEDIR/etc/bash_completion.d"
 # Turn on homebre v2 bash completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "$HOMEBREW_BASEDIR/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_BASEDIR/etc/profile.d/bash_completion.sh"
 
 ###################################
 # Showing a fortune in each *term #
