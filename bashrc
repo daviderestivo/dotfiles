@@ -192,8 +192,8 @@ alias tl='tmux ls' # tmux list
 # various aliases
 alias o='open'
 alias man='man -P eless'
-alias ec='$HOMEBREW_BINDIR/emacsclient --no-wait'
-alias ep='$HOMEBREW_BINDIR/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
+alias ec='$HOMEBREW_BASEDIR/bin/emacsclient --no-wait'
+alias ep='$HOMEBREW_BASEDIR/bin/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
 alias ll='ls -l'
 alias la='ls -al'
 alias grep='grep --colour=auto'
