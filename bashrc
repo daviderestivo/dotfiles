@@ -29,19 +29,18 @@ export LC_CTYPE=en_US.UTF-8
 # Avoid cowsay for ansible
 export ANSIBLE_NOCOWS=1
 
-# Homebrew's formulae puts executables either in /usr/local/bin and
-# /usr/local/sbin or /opt/homebrew/bin and /opt/homebrew/sbin (new dir
-# layout)
+# On Intel CPUs, Homebrew installs files in `/usr/local'. On Apple
+# silicon CPUs, instead files are placed into the `/opt/homebrew'
+CPU_BRAND=`sysctl -n machdep.cpu.brand_string`
 
-# Please uncomment the line based in your setup export
-# export HOMEBREW_BASEDIR="/opt/homebrew"
-export HOMEBREW_BASEDIR="/usr/local"
+if [[ "$CPU_BRAND" =~ ^Intel ]]; then
+    export HOMEBREW_BASEDIR="/usr/local"
+else
+    export HOMEBREW_BASEDIR="/opt/homebrew"
+fi
 
+# Add Homebrew bin and sbin dirs to the PATH
 export HOMEBREW_BINDIR="$HOMEBREW_BASEDIR/bin:$HOMEBREW_BASEDIR/sbin"
-
-# Homebrew's formulae puts executables in /usr/local/bin /usr/local/sbin or
-# /opt/homebrew/bin and /opt/homebrew/sbin
-# Add both bin dirs to the PATH
 export PATH="$HOMEBREW_BINDIR:$PATH"
 
 # Add ~/bin and ~/.local/bin/ to the PATH
