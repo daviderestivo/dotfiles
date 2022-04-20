@@ -48,7 +48,7 @@ export PATH="$HOMEBREW_BINDIR:$PATH"
 export PATH="~/.local/bin:~/bin:$PATH"
 
 # Add ruby bin dir to the PATH
-export PATH="$HOMEBREW_BASEDIR/opt/ruby/bin:$PATH"p
+export PATH="$HOMEBREW_BASEDIR/opt/ruby/bin:$PATH"
 
 # Add TMUX Plugin Manager bin dir to the PATH
 export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
