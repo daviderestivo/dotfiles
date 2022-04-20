@@ -34,8 +34,8 @@ export ANSIBLE_NOCOWS=1
 # layout)
 
 # Please uncomment the line based in your setup export
-export HOMEBREW_BASEDIR="/opt/homebrew"
-# export HOMEBREW_BASEDIR="/opt/local"
+# export HOMEBREW_BASEDIR="/opt/homebrew"
+export HOMEBREW_BASEDIR="/usr/local"
 
 export HOMEBREW_BINDIR="$HOMEBREW_BASEDIR/bin:$HOMEBREW_BASEDIR/sbin"
 
