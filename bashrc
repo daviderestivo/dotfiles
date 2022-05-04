@@ -18,8 +18,11 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Timestamps in Bash history
-HISTTIMEFORMAT='%F %T '
-export HISTTIMEFORMAT
+export HISTTIMEFORMAT='%F %T '
+
+# Lines which begin with a space character are not saved in the
+# history list.
+export HISTCONTROL=ignorespace
 
 # Setting locale: en_US.UTF-8
 export LC_ALL=en_US.UTF-8
