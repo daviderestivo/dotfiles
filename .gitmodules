@@ -49,3 +49,6 @@
 [submodule "magit/packages/hydra"]
 	path = magit/packages/hydra
 	url = https://github.com/abo-abo/hydra/
+[submodule "oh-my-bash"]
+	path = oh-my-bash
+	url = https://github.com/ohmybash/oh-my-bash

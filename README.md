@@ -25,6 +25,7 @@ In addition you can find some very simple tmuxinator config files:
 - tmux [[Link](https://github.com/tmux/tmux/wiki)]
 - iTerm2 [[Link](https://www.iterm2.com)]
 - magit [[Link](https://magit.vc)]
+- oh-my-bash [[Link](https://github.com/ohmybash/oh-my-bash)]
 
 ## Installation
 ### Clone the repo
@@ -35,6 +36,10 @@ git submodule init
 git submodule update
 git submodule foreach --recursive git checkout master
 ```
+
+### Install required fonts
+Intall DejaVuSansMono fonts: https://dejavu-fonts.github.io/Download.html
+Intall DejaVuSansMonoPowerline fonts: https://github.com/powerline/fonts/tree/master/DejaVuSansMono
 
 ### Install cmake and compile tmux-mem-cpu-load
 ``` bash

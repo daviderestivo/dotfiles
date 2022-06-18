@@ -1,257 +1,131 @@
-# Test for an interactive shell.  There is no need to set anything
-# past this point for scp and rcp, and it's important to refrain from
-# outputting anything in those cases.
-if [[ $- != *i* ]] ; then
-    # Shell is non-interactive.  Be done now!
-    return
-fi
-
-# Set colorful PS1
-if [[ ${EUID} == 0 ]] ; then
-    PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
-else
-    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
-fi
-
-# Colored ls
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-
-# Timestamps in Bash history
-export HISTTIMEFORMAT='%F %T '
-
-# Lines which begin with a space character are not saved in the
-# history list.
-export HISTCONTROL=ignorespace
-
-# Setting locale: en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-
-# Avoid cowsay for ansible
-export ANSIBLE_NOCOWS=1
-
-# On Intel CPUs, Homebrew installs files in `/usr/local'. On Apple
-# silicon CPUs, instead files are placed into the `/opt/homebrew'
-CPU_BRAND=`sysctl -n machdep.cpu.brand_string`
-
-if [[ "$CPU_BRAND" =~ ^Intel ]]; then
-    export HOMEBREW_BASEDIR="/usr/local"
-else
-    export HOMEBREW_BASEDIR="/opt/homebrew"
-fi
-
-# Add Homebrew bin and sbin dirs to the PATH
-export HOMEBREW_BINDIR="$HOMEBREW_BASEDIR/bin:$HOMEBREW_BASEDIR/sbin"
-export PATH="$HOMEBREW_BINDIR:$PATH"
-
-# Add ~/bin and ~/.local/bin/ to the PATH
-export PATH="~/.local/bin:~/bin:$PATH"
-
-# Add ruby bin dir to the PATH
-export PATH="$HOMEBREW_BASEDIR/opt/ruby/bin:$PATH"
-
-# Add TMUX Plugin Manager bin dir to the PATH
-export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
-
-# Add mactex bin dir to the PATH
-export PATH="/Library/TeX/texbin/:$PATH"
-
-# Add python3 bin dir to the PATH
-export PATH="$HOMEBREW_BASEDIR/opt/python/bin/:$PATH"
-
-# Set EDITOR
-export EDITOR="${HOME}/bin/edit"
-
-##################
-# BASH FUNCTIONS #
-##################
-
-# Helper functions used to upgrade Python 2/3 packages
-pip_list_outdated() {
-    if [ "X$1" = "X" ]; then
-	echo "A simple bash function to list all of the outdated python Eggs."
-	echo "Usage: pip_list_outdated <version>"
-	echo ""
-	echo "Example: pip_list_outdated 3"
-	echo "         List all of the python3 outdated Eggs"
-	return 1
-    fi
-    if [ "$1" = "2" ]; then
-        pip2 list --outdated | awk 'NR > 2 {print $1}'
-    elif [ "$1" = "3" ]; then
-	pip3 list --outdated | awk 'NR > 2 {print $1}'
-    else
-	echo "A simple bash function to list all of the outdated python Eggs."
-	echo "Usage: pip_list_outdated <version>"
-	echo ""
-	echo "Example: pip_list_outdated 2"
-	echo "         List all of the python2 outdated Eggs"
-	return 1
-    fi
-}
-
-pip_update() {
-    # If arguments list is empty, print usage menu an exit
-    if [ "X$1" = "X" ]; then
-	echo "A simple bash function to upgrade all of the python Eggs installed via pip."
-	echo "Usage: pip_update <version>"
-	echo ""
-	echo "Example: pip_update 2"
-	echo "         Updates all of the python2 Eggs"
-	return 1
-    fi
-    if [ "$1" = "2" ]; then
-        if [ -f ~/.pip_update2.blacklist ]; then
-            LIST=$(comm -3 <(pip_list_outdated 2 | sort) <(cat ~/.pip_update2.blacklist | grep -v \# | sort))
-        else
-            LIST=$(pip_list_outdated 2)
-        fi
-        if [ "X$LIST" != "X"  ]; then
-            echo $LIST
-            pip2 install -U $LIST
-        else
-            BLACKLISTED_PACKAGES=`cat ~/.pip_update2.blacklist | grep \#`
-            if [ "$BLACKLISTED_PACKAGES" != "0" ]; then
-                echo "Some packages were not updated. Please have a look into ~/.pip_update2.blacklist"
-            else
-                echo "All packages are up-to-date!"
-            fi
-        fi
-    elif [ "$1" = "3" ]; then
-        if [ -f ~/.pip_update3.blacklist ]; then
-            LIST=$(comm -3 <(pip_list_outdated 3 | sort) <(cat ~/.pip_update3.blacklist | grep -v \# | sort))
-        else
-            LIST=$(pip_list_outdated 3)
-        fi
-        if [ "X$LIST" != "X"  ]; then
-            echo $LIST
-            pip3 install -U $LIST
-        else
-            BLACKLISTED_PACKAGES=`cat ~/.pip_update3.blacklist | grep \#`
-            if [ "$BLACKLISTED_PACKAGES" != "0" ]; then
-                echo "Some packages were not updated. Please have a look into ~/.pip_update3.blacklist"
-            else
-                echo "All packages are up-to-date!"
-            fi
-        fi
-    else
-	echo "A simple bash function to upgrade all of the python Eggs installed via pip."
- 	echo "Usage: pip_update <version>"
- 	echo ""
- 	echo "Example: pip_update 2"
- 	echo "         Updates all of the python2 Eggs"
-	return 1
-    fi
-}
-
-# Password generator
-pwdgen(){
-    # First argument is the password lenght
-    openssl rand -base64 $1
-}
-
-# Create a Maven project
-mvn-create-project() {
-    # If arguments list is empty, print usage menu an exit
-    if [ "$#" -ne 2 ]; then
-	echo "A simple bash function to create a Maven project."
-	echo "Usage: mvn-create-project groupId artifactId"
-	echo ""
-	echo "Example:"
-	echo "         mvn-create-project com.mycompany.my-app my-app"
-	return 1
-    fi
-    # Call maven
-    mvn archetype:generate -DgroupId=$1 -DartifactId=$2  \
-        -DarchetypeArtifactId=maven-archetype-quickstart \
-        -DarchetypeVersion=1.4 -DinteractiveMode=false
-}
-
-###########
-# ALIASES #
-###########
-
-# IOS XRv consoles
-alias c1='minicom -D unix#/tmp/rtr01.pipe'
-alias c2='minicom -D unix#/tmp/rtr02.pipe'
-alias c3='minicom -D unix#/tmp/rtr03.pipe'
-alias c4='minicom -D unix#/tmp/rtr04.pipe'
-alias c5='minicom -D unix#/tmp/rtr05.pipe'
-alias c6='minicom -D unix#/tmp/rtr06.pipe'
-alias c7='minicom -D unix#/tmp/rtr07.pipe'
-alias c8='minicom -D unix#/tmp/rtr08.pipe'
-
-# Legacy SSH with DH Group1 + old CBC ciphers
-alias sshl='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oCiphers=+aes128-cbc,aes192-cbc,aes256-cbc'
-
-# tmux aliases
-alias ts='tmux' # tmux start
-alias ta='tmux attach -t' # tmux attach
-alias tl='tmux ls' # tmux list
-
-# various aliases
-alias o='open'
-alias man='man -P eless'
-alias ec='$HOMEBREW_BASEDIR/bin/emacsclient --no-wait'
-alias ep='$HOMEBREW_BASEDIR/bin/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
-alias ll='ls -l'
-alias la='ls -al'
-alias grep='grep --colour=auto'
-alias sshx='ssh -X'
-alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
-alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
-alias oc='octave-cli'
-alias bupgrade='brew upgrade && brew upgrade --greedy'
-alias bhupgrade='brew upgrade --fetch-HEAD && brew upgrade --greedy'
-alias bclean='brew cleanup -s'
-alias unquarantine='xattr -r -d com.apple.quarantine'
-alias umlet='/Applications/Umlet/umlet.sh'
-alias magit="emacs --no-window-system --no-init-file \
-      --load ~/.dotfiles/magit/magit-init.el \
-      --eval '(progn (magit-status) (delete-other-windows))'"
-alias git-update-submodules='git submodule foreach --recursive git checkout master && \
-      git submodule foreach --recursive git pull'
-# The below alias require realpath to be installed: `brew install coreutils`
-alias mc=". $(echo $(dirname $(realpath $(which mc))) | sed 's/bin//')libexec/mc/mc-wrapper.sh"
-#alias cat="bat"
-alias gcd='git add . && git commit -m "Date: $(date)"'
-
-###################
-# Bash Completion #
-###################
-# Use existing homebrew v1 completions #
-export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_BASEDIR/etc/bash_completion.d"
-# Turn on homebre v2 bash completion
-[[ -r "$HOMEBREW_BASEDIR/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_BASEDIR/etc/profile.d/bash_completion.sh"
-
-###################################
-# Showing a fortune in each *term #
-###################################
-case $TERM in
-    xterm*|rxvt|Eterm|eterm)
-	cowthink `fortune`
-	;;
+# Enable the subsequent settings only in interactive sessions
+case $- in
+  *i*) ;;
+    *) return;;
 esac
 
-###################################
-# Load iTerm2 "Shell Integration" #
-###################################
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+# Path to your oh-my-bash installation.
+export OSH=~/.dotfiles/oh-my-bash
 
-#######################
-# Add personal config #
-#######################
-if [ -f ~/.bash_personal ]; then
-    . ~/.bash_personal
-fi
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-bash is loaded.
+OSH_THEME="powerline-multiline"
 
-###############################
-# Create GHCi launcher script #
-###############################
-if [ ! -f ~/bin/ghci ]; then
-    echo "#!/bin/bash" > ~/bin/ghci
-    echo "stack exec -- ghci $@" >> ~/bin/ghci
-    chmod +x ~/bin/ghci
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_OSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $OSH/custom?
+# OSH_CUSTOM=/path/to/new-custom-folder
+
+# To disable the uses of "sudo" by oh-my-bash, please set "false" to
+# this variable.  The default behavior for the empty value is "true".
+OMB_USE_SUDO=true
+
+# Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
+# Custom completions may be added to ~/.oh-my-bash/custom/completions/
+# Example format: completions=(ssh git bundler gem pip pip3)
+# Add wisely, as too many completions slow down shell startup.
+completions=(
+  brew
+  composer
+  git
+  ssh
+)
+
+# Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
+# Custom aliases may be added to ~/.oh-my-bash/custom/aliases/
+# Example format: aliases=(vagrant composer git-avh)
+# Add wisely, as too many aliases slow down shell startup.
+aliases=(
+  general
+)
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
+# Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  ansible
+  aws
+  bashmarks
+  battery
+  brew
+  git
+  kubectl
+  progress
+  pyenv
+)
+
+# Which plugins would you like to conditionally load? (plugins can be found in ~/.oh-my-bash/plugins/*)
+# Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
+# Example format:
+#  if [ "$DISPLAY" ] || [ "$SSH" ]; then
+#      plugins+=(tmux-autoattach)
+#  fi
+
+source "$OSH"/oh-my-bash.sh
+
+# User configuration
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-bash libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-bash
+# users are encouraged to define aliases within the OSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias bashconfig="mate ~/.bashrc"
+# alias ohmybash="mate ~/.oh-my-bash"
+
+# Addons to oh-my-bash bashrc
+if [ -f ~/.dotfiles/bashrc_addons ]; then
+    . ~/.dotfiles/bashrc_addons
 fi

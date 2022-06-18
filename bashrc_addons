@@ -1,0 +1,242 @@
+# Colored ls
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# Timestamps in Bash history
+export HISTTIMEFORMAT='%F %T '
+
+# Lines which begin with a space character are not saved in the
+# history list.
+export HISTCONTROL=ignorespace
+
+# Setting locale: en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
+# Avoid cowsay for ansible
+export ANSIBLE_NOCOWS=1
+
+# On Intel CPUs, Homebrew installs files in `/usr/local'. On Apple
+# silicon CPUs, instead files are placed into the `/opt/homebrew'
+CPU_BRAND=`sysctl -n machdep.cpu.brand_string`
+
+if [[ "$CPU_BRAND" =~ ^Intel ]]; then
+    export HOMEBREW_BASEDIR="/usr/local"
+else
+    export HOMEBREW_BASEDIR="/opt/homebrew"
+fi
+
+# Add Homebrew bin and sbin dirs to the PATH
+export HOMEBREW_BINDIR="$HOMEBREW_BASEDIR/bin:$HOMEBREW_BASEDIR/sbin"
+export PATH="$HOMEBREW_BINDIR:$PATH"
+
+# Add ~/bin and ~/.local/bin/ to the PATH
+export PATH="~/.local/bin:~/bin:$PATH"
+
+# Add ruby bin dir to the PATH
+export PATH="$HOMEBREW_BASEDIR/opt/ruby/bin:$PATH"
+
+# Add TMUX Plugin Manager bin dir to the PATH
+export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
+
+# Add mactex bin dir to the PATH
+export PATH="/Library/TeX/texbin/:$PATH"
+
+# Add python3 bin dir to the PATH
+export PATH="$HOMEBREW_BASEDIR/opt/python/bin/:$PATH"
+
+# Set EDITOR
+export EDITOR="${HOME}/bin/edit"
+
+##################
+# BASH FUNCTIONS #
+##################
+
+# Helper functions used to upgrade Python 2/3 packages
+pip_list_outdated() {
+    if [ "X$1" = "X" ]; then
+	echo "A simple bash function to list all of the outdated python Eggs."
+	echo "Usage: pip_list_outdated <version>"
+	echo ""
+	echo "Example: pip_list_outdated 3"
+	echo "         List all of the python3 outdated Eggs"
+	return 1
+    fi
+    if [ "$1" = "2" ]; then
+        pip2 list --outdated | awk 'NR > 2 {print $1}'
+    elif [ "$1" = "3" ]; then
+	pip3 list --outdated | awk 'NR > 2 {print $1}'
+    else
+	echo "A simple bash function to list all of the outdated python Eggs."
+	echo "Usage: pip_list_outdated <version>"
+	echo ""
+	echo "Example: pip_list_outdated 2"
+	echo "         List all of the python2 outdated Eggs"
+	return 1
+    fi
+}
+
+pip_update() {
+    # If arguments list is empty, print usage menu an exit
+    if [ "X$1" = "X" ]; then
+	echo "A simple bash function to upgrade all of the python Eggs installed via pip."
+	echo "Usage: pip_update <version>"
+	echo ""
+	echo "Example: pip_update 2"
+	echo "         Updates all of the python2 Eggs"
+	return 1
+    fi
+    if [ "$1" = "2" ]; then
+        if [ -f ~/.pip_update2.blacklist ]; then
+            LIST=$(comm -3 <(pip_list_outdated 2 | sort) <(cat ~/.pip_update2.blacklist | grep -v \# | sort))
+        else
+            LIST=$(pip_list_outdated 2)
+        fi
+        if [ "X$LIST" != "X"  ]; then
+            echo $LIST
+            pip2 install -U $LIST
+        else
+            BLACKLISTED_PACKAGES=`cat ~/.pip_update2.blacklist | grep \#`
+            if [ "$BLACKLISTED_PACKAGES" != "0" ]; then
+                echo "Some packages were not updated. Please have a look into ~/.pip_update2.blacklist"
+            else
+                echo "All packages are up-to-date!"
+            fi
+        fi
+    elif [ "$1" = "3" ]; then
+        if [ -f ~/.pip_update3.blacklist ]; then
+            LIST=$(comm -3 <(pip_list_outdated 3 | sort) <(cat ~/.pip_update3.blacklist | grep -v \# | sort))
+        else
+            LIST=$(pip_list_outdated 3)
+        fi
+        if [ "X$LIST" != "X"  ]; then
+            echo $LIST
+            pip3 install -U $LIST
+        else
+            BLACKLISTED_PACKAGES=`cat ~/.pip_update3.blacklist | grep \#`
+            if [ "$BLACKLISTED_PACKAGES" != "0" ]; then
+                echo "Some packages were not updated. Please have a look into ~/.pip_update3.blacklist"
+            else
+                echo "All packages are up-to-date!"
+            fi
+        fi
+    else
+	echo "A simple bash function to upgrade all of the python Eggs installed via pip."
+ 	echo "Usage: pip_update <version>"
+ 	echo ""
+ 	echo "Example: pip_update 2"
+ 	echo "         Updates all of the python2 Eggs"
+	return 1
+    fi
+}
+
+# Password generator
+pwdgen(){
+    # First argument is the password lenght
+    openssl rand -base64 $1
+}
+
+# Create a Maven project
+mvn-create-project() {
+    # If arguments list is empty, print usage menu an exit
+    if [ "$#" -ne 2 ]; then
+	echo "A simple bash function to create a Maven project."
+	echo "Usage: mvn-create-project groupId artifactId"
+	echo ""
+	echo "Example:"
+	echo "         mvn-create-project com.mycompany.my-app my-app"
+	return 1
+    fi
+    # Call maven
+    mvn archetype:generate -DgroupId=$1 -DartifactId=$2  \
+        -DarchetypeArtifactId=maven-archetype-quickstart \
+        -DarchetypeVersion=1.4 -DinteractiveMode=false
+}
+
+###########
+# ALIASES #
+###########
+
+# IOS XRv consoles
+alias c1='minicom -D unix#/tmp/rtr01.pipe'
+alias c2='minicom -D unix#/tmp/rtr02.pipe'
+alias c3='minicom -D unix#/tmp/rtr03.pipe'
+alias c4='minicom -D unix#/tmp/rtr04.pipe'
+alias c5='minicom -D unix#/tmp/rtr05.pipe'
+alias c6='minicom -D unix#/tmp/rtr06.pipe'
+alias c7='minicom -D unix#/tmp/rtr07.pipe'
+alias c8='minicom -D unix#/tmp/rtr08.pipe'
+
+# Legacy SSH with DH Group1 + old CBC ciphers
+alias sshl='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oCiphers=+aes128-cbc,aes192-cbc,aes256-cbc'
+
+# tmux aliases
+alias ts='tmux' # tmux start
+alias ta='tmux attach -t' # tmux attach
+alias tl='tmux ls' # tmux list
+
+# various aliases
+alias o='open'
+alias man='man -P eless'
+alias ec='$HOMEBREW_BASEDIR/bin/emacsclient --no-wait'
+alias ep='$HOMEBREW_BASEDIR/bin/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
+alias ll='ls -l'
+alias la='ls -al'
+alias grep='grep --colour=auto'
+alias sshx='ssh -X'
+alias enaHidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
+alias disaHidden='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
+alias oc='octave-cli'
+alias bupgrade='brew upgrade && brew upgrade --greedy'
+alias bhupgrade='brew upgrade --fetch-HEAD && brew upgrade --greedy'
+alias bclean='brew cleanup -s'
+alias unquarantine='xattr -r -d com.apple.quarantine'
+alias umlet='/Applications/Umlet/umlet.sh'
+alias magit="emacs --no-window-system --no-init-file \
+      --load ~/.dotfiles/magit/magit-init.el \
+      --eval '(progn (magit-status) (delete-other-windows))'"
+alias git-update-submodules='git submodule foreach --recursive git checkout master && \
+      git submodule foreach --recursive git pull'
+# The below alias require realpath to be installed: `brew install coreutils`
+alias mc=". $(echo $(dirname $(realpath $(which mc))) | sed 's/bin//')libexec/mc/mc-wrapper.sh"
+#alias cat="bat"
+alias gcd='git add . && git commit -m "Date: $(date)"'
+
+###################
+# Bash Completion #
+###################
+# Use existing homebrew v1 completions #
+export BASH_COMPLETION_COMPAT_DIR="$HOMEBREW_BASEDIR/etc/bash_completion.d"
+# Turn on homebre v2 bash completion
+[[ -r "$HOMEBREW_BASEDIR/etc/profile.d/bash_completion.sh" ]] && . "$HOMEBREW_BASEDIR/etc/profile.d/bash_completion.sh"
+
+###################################
+# Showing a fortune in each *term #
+###################################
+case $TERM in
+    xterm*|rxvt|Eterm|eterm)
+	cowthink `fortune`
+	;;
+esac
+
+###################################
+# Load iTerm2 "Shell Integration" #
+###################################
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+###############################
+# Create GHCi launcher script #
+###############################
+if [ ! -f ~/bin/ghci ]; then
+    echo "#!/bin/bash" > ~/bin/ghci
+    echo "stack exec -- ghci $@" >> ~/bin/ghci
+    chmod +x ~/bin/ghci
+fi
+
+#######################
+# Add personal config #
+#######################
+if [ -f ~/.bash_personal ]; then
+    . ~/.bash_personal
+fi
