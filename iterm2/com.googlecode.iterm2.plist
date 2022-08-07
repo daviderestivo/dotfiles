@@ -475,6 +475,8 @@
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>Icon</key>
+			<integer>0</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -1112,7 +1114,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm-256color</string>
+			<string>linux</string>
 			<key>Transparency</key>
 			<real>0.11953124970021331</real>
 			<key>Triggers</key>
