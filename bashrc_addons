@@ -191,6 +191,7 @@ alias oc='octave-cli'
 alias bupgrade='brew upgrade && brew upgrade --greedy'
 alias bhupgrade='brew upgrade --fetch-HEAD && brew upgrade --greedy'
 alias bclean='brew cleanup -s'
+alias macosx-update='pip_update 3 && gem update && gem cleanup && update_plugins all && bhupgrade && bclean'
 alias unquarantine='xattr -r -d com.apple.quarantine'
 alias umlet='/Applications/Umlet/umlet.sh'
 alias magit="emacs --no-window-system --no-init-file \
