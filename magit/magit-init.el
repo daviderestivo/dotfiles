@@ -103,7 +103,7 @@
 
 ;; Turn on highlighting current line
 (global-hl-line-mode 1)
-(set-face-background hl-line-face "gray70")
+(set-face-background hl-line-face "grey60")
 
 ;; Fix <DEL> fails to delete on a terminal
 (normal-erase-is-backspace-mode 1)
@@ -142,6 +142,7 @@
 
 ;;; Magit configuration
 (global-set-key (kbd "<f2>") 'magit-status)
+(set-face-background 'magit-section-highlight "grey60")
 
 ;; Expand "unpushed to upstream or recent" magit section
 (push (cons [unpushed status] 'show) magit-section-initial-visibility-alist)
