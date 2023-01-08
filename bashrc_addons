@@ -154,6 +154,23 @@ mvn-create-project() {
         -DarchetypeVersion=1.4 -DinteractiveMode=false
 }
 
+# Start battery draining...
+discharge_battery_start () {
+    local num_cpus=$(sysctl -n hw.ncpu)
+    let "num_procs = num_cpus-1"
+    # We run 'num_cpus-1' (and not 'num_cpu') procs to avoid system
+    # unresponsiveness
+    for i in `seq 1 $num_procs`;
+    do
+        yes > /dev/null &
+    done
+}
+
+# ... stop battery draining
+discharge_battery_stop () {
+    killall yes
+}
+
 ###########
 # ALIASES #
 ###########
