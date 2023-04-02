@@ -214,7 +214,7 @@ alias umlet='/Applications/Umlet/umlet.sh'
 alias magit="emacs --no-window-system --no-init-file \
       --load ~/.dotfiles/magit/magit-init.el \
       --eval '(progn (magit-status) (delete-other-windows))'"
-alias git-update-submodules='git submodule foreach --recursive git checkout master && \
+alias git-update-submodules='git submodule foreach --recursive git checkout && \
       git submodule foreach --recursive git pull'
 # The below alias require realpath to be installed: `brew install coreutils`
 alias mc='. $(echo $(dirname $(realpath $(which mc))) | sed "s/bin//")libexec/mc/mc-wrapper.sh'
