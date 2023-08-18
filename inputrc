@@ -1,0 +1,8 @@
+$if Bash
+  # Correct - binds to C-x q
+  "\C-xq": "Hello, World"
+  # Correct - binds to C-M-p
+  "\e\C-p": "Good Bye!"
+$else
+   # ...
+$endif
