@@ -54,4 +54,4 @@
 	url = https://github.com/ohmybash/oh-my-bash
 [submodule "magit/packages/compat"]
 	path = magit/packages/compat
-	url = https://git.sr.ht/~pkal/compat
+	url = https://github.com/emacs-compat/compat
