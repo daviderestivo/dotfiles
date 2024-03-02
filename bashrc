@@ -95,7 +95,9 @@ plugins=(
 #      plugins+=(tmux-autoattach)
 #  fi
 
-source "$OSH"/oh-my-bash.sh
+# Tramp on Emacs gets hung up without this workaround. The same
+# workareound is needed for iTerm2 shell integration in bashrc_addons.
+[ $TERM = "dumb" ] || source "$OSH"/oh-my-bash.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"

@@ -242,7 +242,11 @@ esac
 ###################################
 # Load iTerm2 "Shell Integration" #
 ###################################
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+# Tramp on Emacs gets hung up without this workaround. The same
+# workareound is needed for oh-my-bash.sh in bashrc.
+[ $TERM = "dumb" ] || \
+    test -e "${HOME}/.iterm2_shell_integration.bash" && \
+        source "${HOME}/.iterm2_shell_integration.bash"
 
 ###############################
 # Create GHCi launcher script #
