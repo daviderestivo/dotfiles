@@ -81,6 +81,7 @@ cp ~/.tmux.conf ~/.tmux.conf.orig
 cp ~/.config/mc/ini ~/.config/mc/ini.orig
 cp ~/.config/rtv/rtv.cfg ~/.config/rtv/rtv.cfg.orig
 cp ~/.config/bat/config ~/.config/bat/config.orig
+cp ~/Library/Application\ Support/tabby/config.yaml ~/Library/Application\ Support/tabby/config.yaml.orig
 
 # Use the ones provided by this repo
 cd ~
@@ -93,6 +94,7 @@ ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ln -sf ~/.dotfiles/eless/eless ~/bin/eless
 ln -sf ~/.dotfiles/edit/edit ~/bin/edit
+ln -sf ~/.dotfiles/tabby/config.yaml ~/Library/Application\ Support/tabby/config.yaml
 ```
 
 ### Configure iTerm2
