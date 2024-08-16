@@ -216,7 +216,6 @@ terminal:
   customColorSchemes: []
   fallbackFont: DejaVu Sans Mono for Powerline
   font: DejaVu Sans Mono
-  frontend: xterm
 ssh: {}
 clickableLinks: {}
 accessibility: {}
