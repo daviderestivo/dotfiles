@@ -144,10 +144,14 @@ hotkeys:
     - ⌘-⌥-[
   pane-nav-next:
     - ⌘-⌥-]
-  pane-nav-1: []
-  pane-nav-2: []
-  pane-nav-3: []
-  pane-nav-4: []
+  pane-nav-1:
+    - Ctrl-⌘-1
+  pane-nav-2:
+    - Ctrl-⌘-2
+  pane-nav-3:
+    - Ctrl-⌘-3
+  pane-nav-4:
+    - Ctrl-⌘-4
   pane-nav-5: []
   pane-nav-6: []
   pane-nav-7: []
@@ -168,7 +172,8 @@ hotkeys:
   command-selector:
     - ⌘-Shift-P
 terminal:
-  searchOptions: {}
+  searchOptions:
+    wholeWord: true
   colorScheme:
     name: Atom
     foreground: '#c5c8c6'
@@ -216,6 +221,7 @@ terminal:
   customColorSchemes: []
   fallbackFont: DejaVu Sans Mono for Powerline
   font: DejaVu Sans Mono
+  altIsMeta: true
 ssh: {}
 clickableLinks: {}
 accessibility: {}
