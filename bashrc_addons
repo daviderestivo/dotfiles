@@ -220,7 +220,7 @@ alias git-update-submodules='git submodule foreach --recursive git checkout && \
 alias mc='. $(echo $(dirname $(realpath $(which mc))) | sed "s/bin//")libexec/mc/mc-wrapper.sh'
 #alias cat="bat"
 alias gcd='git add . && git commit -m "Date: $(date)"'
-alias heic2jpeg='magick mogrify -monitor -format jpg'
+alias img2jpeg='magick mogrify -monitor -format jpg'
 
 ###################
 # Bash Completion #
