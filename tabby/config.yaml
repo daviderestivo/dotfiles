@@ -224,7 +224,8 @@ terminal:
   altIsMeta: true
 ssh: {}
 clickableLinks: {}
-accessibility: {}
+accessibility:
+  animations: false
 appearance:
   tabsLocation: bottom
   lastTabClosesWindow: true
