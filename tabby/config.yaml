@@ -172,8 +172,7 @@ hotkeys:
   command-selector:
     - ⌘-Shift-P
 terminal:
-  searchOptions:
-    wholeWord: true
+  searchOptions: {}
   colorScheme:
     name: Atom
     foreground: '#c5c8c6'
