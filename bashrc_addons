@@ -193,6 +193,10 @@ alias ts='tmux' # tmux start
 alias ta='tmux attach -t' # tmux attach
 alias tl='tmux ls' # tmux list
 
+# kubectl aliases
+alias kubens='kubectl config set-context --current --namespace '
+alias kubectx='kubectl config use-context '
+
 # various aliases
 alias o='open'
 alias man='man -P eless'
