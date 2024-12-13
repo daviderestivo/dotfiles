@@ -103,10 +103,10 @@ a custom folder or URL" and choose "~/.dotfiles/iterm2" as folder location.
 
 ### Personalize your .bashrc
 If you wish to add additional .bashrc related configurations/aliases you can
-simply create a new .bashrc_personal:
+simply create a new .bash_personal:
 
 ``` bash
-touch  ~/.bashrc_personal
+touch  ~/.bash_personal
 ```
 
 and add them there.
