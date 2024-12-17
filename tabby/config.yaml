@@ -240,5 +240,10 @@ pluginBlacklist: []
 profileDefaults:
   ssh:
     disableDynamicTitle: true
+  local:
+    type: local
+    options:
+      env: {}
+      cwd: /Users/taareda4
 profileBlacklist: []
 enableAutomaticUpdates: false
