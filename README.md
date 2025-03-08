@@ -95,6 +95,7 @@ ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ln -sf ~/.dotfiles/eless/eless ~/bin/eless
 ln -sf ~/.dotfiles/edit/edit ~/bin/edit
 ln -sf ~/.dotfiles/tabby/config.yaml ~/Library/Application\ Support/tabby/config.yaml
+ln -sf ~/.dotfiles/yazi ~/.config/yazi
 ```
 
 ### Configure iTerm2
