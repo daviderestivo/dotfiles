@@ -58,3 +58,6 @@
 [submodule "magit/packages/llama"]
 	path = magit/packages/llama
 	url = https://github.com/tarsius/llama
+[submodule "yazi/flavors/nightfly.yazi"]
+	path = yazi/flavors/nightfly.yazi
+	url = https://github.com/tkapias/nightfly.yazi.git
