@@ -55,3 +55,6 @@
 [submodule "magit/packages/compat"]
 	path = magit/packages/compat
 	url = https://github.com/emacs-compat/compat
+[submodule "magit/packages/llama"]
+	path = magit/packages/llama
+	url = https://github.com/tarsius/llama
