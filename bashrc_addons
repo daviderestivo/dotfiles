@@ -279,10 +279,12 @@ function y() {
 ###############
 eval "$(zoxide init bash)"
 
-################################################
-# Set up fzf key bindings and fuzzy completion #
-################################################
+##########################################################
+# Set up fzf key bindings and fuzzy completion including #
+# git support (https://github.com/junegunn/fzf-git.sh)   #
+##########################################################
 eval "$(fzf --bash)"
+source ./fzf-git/fzf-git.sh
 
 #######################
 # Add personal config #

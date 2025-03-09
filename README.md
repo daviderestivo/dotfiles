@@ -19,6 +19,7 @@ minor modifications, they can also be used on GNU/Linux.
 - font-symbols-only-nerd-font [[Link](https://github.com/ryanoasis/nerd-fonts)]
 - fortune-mod (Optional) [[Link](https://github.com/shlomif/fortune-mod)]
 - fzf [[Link](https://github.com/junegunn/fzf)]
+- fzf-git [[Link](https://github.com/junegunn/fzf-git.sh)]
 - grep [[Link](https://www.gnu.org/software/grep)]
 - iTerm2 [[Link](https://www.iterm2.com)]
 - imagemagick [[Link](https://imagemagick.org/index.php)]
