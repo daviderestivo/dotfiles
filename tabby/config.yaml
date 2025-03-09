@@ -171,6 +171,7 @@ hotkeys:
     - ⌘-Shift-E
   command-selector:
     - ⌘-Shift-P
+  group-selectors: {}
 terminal:
   searchOptions: {}
   colorScheme:
@@ -218,7 +219,7 @@ terminal:
       - '#3e999f'
       - '#ffffff'
   customColorSchemes: []
-  fallbackFont: DejaVu Sans Mono for Powerline
+  fallbackFont: Symbols Nerd Font Mono
   font: DejaVu Sans Mono
   altIsMeta: true
 ssh: {}
