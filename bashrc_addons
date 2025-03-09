@@ -286,7 +286,7 @@ alias cd='z'
 # git support (https://github.com/junegunn/fzf-git.sh)   #
 ##########################################################
 eval "$(fzf --bash)"
-source ./fzf-git/fzf-git.sh
+source ~/.dotfiles/fzf-git/fzf-git.sh
 
 #######################
 # Add personal config #
