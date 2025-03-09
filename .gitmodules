@@ -70,3 +70,6 @@
 [submodule "yazi/flavors/additional-flavors"]
 	path = yazi/flavors/additional-flavors
 	url = https://github.com/yazi-rs/flavors.git
+[submodule "yazi/flavors/everforest-medium.yazi"]
+	path = yazi/flavors/everforest-medium.yazi
+	url = https://github.com/Chromium-3-Oxide/everforest-medium.yazi.git
