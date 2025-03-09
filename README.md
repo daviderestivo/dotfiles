@@ -3,29 +3,19 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 This repo collects my personal dotfiles for macOS. These dotfiles can
-be used on GNU/Linux as well with some minor changes:
-
-- .bashrc
-- .bash_profile
-- .tmux.conf
-- bat config
-- mc.ext
-- mc ini file
-- rtv.cfg
-- magit (Emacs required)
-
-In addition you can find some very simple tmuxinator config files:
-
-- tmuxinator/*.yml
+be used on GNU/Linux as well with some minor changes.
 
 ## Current software
 - eless [[Link](https://eless.scripter.co)]
+- magit [[Link](https://magit.vc)]
 - mc [[Link](https://midnight-commander.org)]
 - rtv [[Link](https://github.com/michael-lazar/rtv)]
+- tabby [[Link](https://github.com/Eugeny/tabby)]
 - tmux [[Link](https://github.com/tmux/tmux/wiki)]
 - iTerm2 [[Link](https://www.iterm2.com)]
-- magit [[Link](https://magit.vc)]
 - oh-my-bash [[Link](https://github.com/ohmybash/oh-my-bash)]
+- yazi [[Link](https://github.com/sxyazi/yazi)]
+- zoxide [[Link](https://github.com/ajeetdsouza/zoxide)]
 
 ## Installation
 ### Clone the repo
@@ -57,7 +47,7 @@ Emacs is required in order to use magit from console.
 
 ``` bash
 brew tap daviderestivo/emacs-head
-brew install emacs-head@28 --with-cocoa --with-librsvg --with-imagemagick@7
+brew install emacs-head@31 --with-cocoa
 ```
 
 ![Magit](https://raw.githubusercontent.com/daviderestivo/dotfiles/master/screenshots/magit.png)
