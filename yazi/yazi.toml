@@ -61,7 +61,7 @@ play = [
 [open]
 rules = [
 	# Folder
-	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ name = "*/", use = [ "open", "edit", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
