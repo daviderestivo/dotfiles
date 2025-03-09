@@ -278,6 +278,8 @@ function y() {
 # Zoxide init #
 ###############
 eval "$(zoxide init bash)"
+# Use zoxide instead of 'cd' to move between directories
+alias cd='z'
 
 ##########################################################
 # Set up fzf key bindings and fuzzy completion including #
