@@ -2,18 +2,43 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-This repo collects my personal dotfiles for macOS. These dotfiles can
-be used on GNU/Linux as well with some minor changes.
+This repository contains my personal dotfiles for macOS. With a few
+minor modifications, they can also be used on GNU/Linux.
 
-## Current software
+## Present software
+- bash [[Link](https://www.gnu.org/software/bash)]
+- bash-completion@2 [[Link](https://github.com/scop/bash-completion)]
+- bat [[Link](https://github.com/sharkdp/bat)]
+- coreutils [[Link](https://github.com/coreutils/coreutils)]
+- cowsay-ng (Optional) [[Link](https://github.com/daviderestivo/cowsay-ng)]
+- diffutils [[Link](https://www.gnu.org/software/diffutils)]
 - eless [[Link](https://eless.scripter.co)]
-- magit [[Link](https://magit.vc)]
-- mc [[Link](https://midnight-commander.org)]
-- rtv [[Link](https://github.com/michael-lazar/rtv)]
-- tabby [[Link](https://github.com/Eugeny/tabby)]
-- tmux [[Link](https://github.com/tmux/tmux/wiki)]
+- emacs [[Link](https://github.com/emacs-mirror/emacs)]
+- fd [[Link](https://github.com/sharkdp/fd)]
+- ffmpeg [[Link](https://ffmpeg.org/)]
+- font-symbols-only-nerd-font [[Link](https://github.com/ryanoasis/nerd-fonts)]
+- fortune-mod (Optional) [[Link](https://github.com/shlomif/fortune-mod)]
+- fzf [[Link](https://github.com/junegunn/fzf)]
+- grep [[Link](https://www.gnu.org/software/grep)]
 - iTerm2 [[Link](https://www.iterm2.com)]
+- imagemagick [[Link](https://imagemagick.org/index.php)]
+- jq [[Link](https://jqlang.github.io/jq/)]
+- magit (via emacs) [[Link](https://magit.vc)]
+- midnight-commander [[Link](https://midnight-commander.org)]
 - oh-my-bash [[Link](https://github.com/ohmybash/oh-my-bash)]
+- poppler [[Link](https://poppler.freedesktop.org/)]
+- reattach-to-user-namespace [[Link](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard)]
+- ripgrep [[Link](https://github.com/BurntSushi/ripgrep)]
+- rtv [[Link](https://github.com/michael-lazar/rtv)]
+- ruby [[Link](https://www.ruby-lang.org)]
+- sevenzip [[Link](https://7-zip.org)]
+- tabby [[Link](https://github.com/Eugeny/tabby)]
+- the_silver_searcher [[Link](https://geoff.greer.fm/ag/)]
+- tmux [[Link](https://github.com/tmux/tmux)]
+- tmux-mem-cpu-load [[Link](https://github.com/thewtex/tmux-mem-cpu-load)]
+- tmuxinator [[Link](https://github.com/tmuxinator/tmuxinator)]
+- tmuxinator-completion [[Link](https://github.com/tmuxinator/tmuxinator)]
+- tree [[Link](https://oldmanprogrammer.net/source.php?dir=projects/tree)]
 - yazi [[Link](https://github.com/sxyazi/yazi)]
 - zoxide [[Link](https://github.com/ajeetdsouza/zoxide)]
 
@@ -52,6 +77,30 @@ brew install emacs-head@31 --with-cocoa
 
 ![Magit](https://raw.githubusercontent.com/daviderestivo/dotfiles/master/screenshots/magit.png)
 
+### Install required packages
+
+``` bash
+brew install bash bash-completion@2 ruby tmux \
+    reattach-to-user-namespace midnight-commander \
+    the_silver_searcher tmuxinator-completion coreutils \
+    grep tree bat diffutils yazi ffmpeg sevenzip jq \
+    poppler fd ripgrep fzf zoxide imagemagick \
+    font-symbols-only-nerd-font
+
+# Cowsay-ng (Optional)
+brew tap daviderestivo/homebrew-cowsay-ng
+brew install cowsay-ng
+
+# Fortune-mod (Oprtional)
+brew tap daviderestivo/fortune-mod
+brew install fortune-mod --with-offensive --with-fortune-mod-it --with-fortune-mod-woody-allen-it
+
+# Install terminals (you can choose between iTerm or tabby)
+brew install --cask tabby iterm2@beta
+
+# Install tmuxinator
+gem install tmuxinator
+```
 
 ### Link the dotfiles
 ``` bash
