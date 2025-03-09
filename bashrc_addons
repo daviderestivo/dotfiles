@@ -274,6 +274,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+###############
+# Zoxide init #
+###############
+eval "$(zoxide init bash)"
+
 #######################
 # Add personal config #
 #######################
