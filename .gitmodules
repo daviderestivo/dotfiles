@@ -67,3 +67,6 @@
 [submodule "yazi/flavors/moonfly.yazi"]
 	path = yazi/flavors/moonfly.yazi
 	url = https://github.com/tkapias/moonfly.yazi
+[submodule "yazi/flavors/additional-flavors"]
+	path = yazi/flavors/additional-flavors
+	url = https://github.com/yazi-rs/flavors.git
