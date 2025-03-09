@@ -41,6 +41,10 @@ minor modifications, they can also be used on GNU/Linux.
 - tmuxinator-completion [[Link](https://github.com/tmuxinator/tmuxinator)]
 - tree [[Link](https://oldmanprogrammer.net/source.php?dir=projects/tree)]
 - yazi [[Link](https://github.com/sxyazi/yazi)]
+- yazi's nightfly theme [[Link](https://github.com/tkapias/nightfly.yazi.git)]
+- yazi's moonfly theme [Link](https://github.com/tkapias/moonfly.yazi)]
+- yazi's varoius themes [[Link](https://github.com/yazi-rs/flavors.git)]
+- yazi's everforest-medium theme [[Link](https://github.com/Chromium-3-Oxide/everforest-medium.yazi.git)]
 - zoxide [[Link](https://github.com/ajeetdsouza/zoxide)]
 
 ## Installation
