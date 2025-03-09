@@ -64,3 +64,6 @@
 [submodule "fzf-git"]
 	path = fzf-git
 	url = https://github.com/junegunn/fzf-git.sh
+[submodule "yazi/flavors/moonfly.yazi"]
+	path = yazi/flavors/moonfly.yazi
+	url = https://github.com/tkapias/moonfly.yazi
