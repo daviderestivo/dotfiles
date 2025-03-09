@@ -92,7 +92,7 @@ brew install bash bash-completion@2 ruby tmux \
 brew tap daviderestivo/homebrew-cowsay-ng
 brew install cowsay-ng
 
-# Fortune-mod (Oprtional)
+# Fortune-mod (Optional)
 brew tap daviderestivo/fortune-mod
 brew install fortune-mod --with-offensive --with-fortune-mod-it --with-fortune-mod-woody-allen-it
 
