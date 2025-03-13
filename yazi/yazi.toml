@@ -58,8 +58,16 @@ play = [
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 
+drawio = [
+	{ run = '/Applications/draw.io.app/Contents/MacOS/draw.io "$0"', orphan = true, desc = "Open with Drawio", for = "macos" },
+	{ run = 'drawio "$0"',                                           orphan = true, desc = "Open with Drawio", for = "linux" },
+        { run = 'start "" "%0"',                                         orphan = true, desc = "Open with Drawio", for = "windows" },
+]
+
 [open]
 rules = [
+        # Drawio
+      	{ name = "*.drawio", use = [ "drawio", "reveal" ] },
 	# Folder
 	{ name = "*/", use = [ "open", "edit", "reveal" ] },
 	# Text
