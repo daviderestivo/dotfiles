@@ -54,7 +54,6 @@ git clone --depth 1 https://github.com/daviderestivo/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 git submodule init
 git submodule update
-git submodule foreach --recursive git checkout master
 ```
 
 ### Install required fonts
