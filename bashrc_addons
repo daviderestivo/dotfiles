@@ -277,6 +277,7 @@ function y() {
 ###############
 # Zoxide init #
 ###############
+_ZO_DOCTOR=0
 eval "$(zoxide init bash)"
 # Use zoxide instead of 'cd' to move between directories
 alias cd='z'
