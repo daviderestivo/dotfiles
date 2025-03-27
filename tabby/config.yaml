@@ -1,6 +1,7 @@
 version: 7
-profiles: []
-groups: []
+groups:
+  - id: 2f8818c0-aa95-46e4-8345-3eeaa8fcdd0e
+    name: Personal
 configSync:
   parts: {}
 hotkeys:
@@ -172,6 +173,10 @@ hotkeys:
   command-selector:
     - ⌘-Shift-P
   group-selectors: {}
+  scroll-page-up:
+    - ⌥-PageUp
+  scroll-page-down:
+    - ⌥-PageDown
 terminal:
   searchOptions: {}
   colorScheme:
@@ -222,6 +227,7 @@ terminal:
   fallbackFont: Symbols Nerd Font Mono
   font: DejaVu Sans Mono
   altIsMeta: true
+  profile: local:custom:Default:66da16f7-36c2-43f6-95ab-c8cd18b92788
 ssh: {}
 clickableLinks: {}
 accessibility:
@@ -248,3 +254,13 @@ profileDefaults:
       cwd: /Users/taareda4
 profileBlacklist: []
 enableAutomaticUpdates: false
+profiles:
+  - icon: fas fa-terminal
+    options:
+      command: /opt/homebrew/bin/bash
+      env: {}
+      args: []
+    name: Default
+    group: 2f8818c0-aa95-46e4-8345-3eeaa8fcdd0e
+    type: local
+    id: local:custom:Default:66da16f7-36c2-43f6-95ab-c8cd18b92788
