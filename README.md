@@ -67,7 +67,7 @@ brew install cmake
 
 # Compile tmux-mem-cpu-load
 cd  ~/.dotfiles/tmux/plugins/tmux-mem-cpu-load
-cmake .
+cmake . -DCMAKE_OSX_SYSROOT=$(xcrun --show-sdk-path)
 make
 ```
 
