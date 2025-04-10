@@ -44,7 +44,7 @@ export PATH="~/.dotfiles/tmux/plugins/tpm/bin:$PATH"
 export PATH="/Library/TeX/texbin/:$PATH"
 
 # Add python3 bin dir to the PATH
-export PATH="$HOMEBREW_BASEDIR/opt/python/bin/:$PATH"
+export PATH="$HOMEBREW_BASEDIR/opt/python/bin:$PATH"
 
 # Set EDITOR
 export EDITOR="${HOME}/bin/edit"
