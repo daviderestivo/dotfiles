@@ -128,6 +128,8 @@ cp ~/Library/Application\ Support/tabby/config.yaml ~/Library/Application\ Suppo
 
 # Use the ones provided by this repo
 cd ~
+ln -sf ~/.dotfiles/zshrc .zshrc
+ln -sf ~/.dotfiles/zprofile .zprofile
 ln -sf ~/.dotfiles/bash_profile .bash_profile
 ln -sf ~/.dotfiles/bashrc .bashrc
 ln -sf ~/.dotfiles/bat/config .config/bat/config
