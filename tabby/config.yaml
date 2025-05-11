@@ -264,3 +264,29 @@ profiles:
     group: 2f8818c0-aa95-46e4-8345-3eeaa8fcdd0e
     type: local
     id: local:custom:Default:66da16f7-36c2-43f6-95ab-c8cd18b92788
+  - options:
+      command: /opt/homebrew/bin/bash
+      env: {}
+      args:
+        - '-i'
+        - '-c'
+        - yazi
+    name: Yazi
+    group: 2f8818c0-aa95-46e4-8345-3eeaa8fcdd0e
+    id: local:custom:Default-copy:3a6997d5-6b8f-4450-b123-12aa3e9c026d
+    icon: fas fa-folder-tree
+    color: '#0275d8'
+    type: local
+  - options:
+      command: /opt/homebrew/bin/bash
+      env: {}
+      args:
+        - '-i'
+        - '-c'
+        - mc
+    name: MC
+    group: 2f8818c0-aa95-46e4-8345-3eeaa8fcdd0e
+    icon: fas fa-folder-tree
+    id: local:custom:MC:662bd2f5-fa93-488b-995c-331cf2693897
+    color: '#613d7c'
+    type: local
