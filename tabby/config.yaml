@@ -269,6 +269,7 @@ profiles:
       env: {}
       args:
         - '-i'
+        - '-l'
         - '-c'
         - yazi
     name: Yazi
@@ -282,6 +283,7 @@ profiles:
       env: {}
       args:
         - '-i'
+        - '-l'
         - '-c'
         - mc
     name: MC
