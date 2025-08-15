@@ -199,6 +199,7 @@ alias kubens='kubectl config set-context --current --namespace '
 alias kubectx='kubectl config use-context '
 
 # various aliases
+alias cls='clear'
 alias o='open'
 alias man='man -P eless'
 alias ec='$HOMEBREW_BASEDIR/bin/emacsclient --no-wait'
