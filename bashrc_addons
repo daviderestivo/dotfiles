@@ -201,7 +201,7 @@ alias kubectx='kubectl config use-context '
 # various aliases
 alias cls='clear'
 alias o='open'
-alias man='man -P eless'
+#alias man='man -P eless'
 alias ec='$HOMEBREW_BASEDIR/bin/emacsclient --no-wait'
 alias ep='$HOMEBREW_BASEDIR/bin/emacs --dump-file="$(echo ~/.emacs.d/.cache/dumps/emacs.pdmp)"'
 alias ll='ls -l'
