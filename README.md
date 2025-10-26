@@ -122,6 +122,7 @@ cp ~/.bash_profile ~/.bash_profile.orig
 cp ~/.bashrc ~/.bashrc.orig
 cp ~/.tmux.conf ~/.tmux.conf.orig
 cp ~/.config/mc/ini ~/.config/mc/ini.orig
+cp ~/.config/mc/mc.ext.ini ~/.config/mc/mc.ext.ini.orig
 cp ~/.config/rtv/rtv.cfg ~/.config/rtv/rtv.cfg.orig
 cp ~/.config/bat/config ~/.config/bat/config.orig
 cp ~/Library/Application\ Support/tabby/config.yaml ~/Library/Application\ Support/tabby/config.yaml.orig
@@ -134,7 +135,7 @@ ln -sf ~/.dotfiles/bash_profile .bash_profile
 ln -sf ~/.dotfiles/bashrc .bashrc
 ln -sf ~/.dotfiles/bat/config .config/bat/config
 ln -sf ~/.dotfiles/tmux/tmux.conf .tmux.conf
-ln -sf ~/.dotfiles/mc/mc.ext .config/mc/mc.ext
+ln -sf ~/.dotfiles/mc/mc.ext.ini .config/mc/mc.ext.ini
 ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ln -sf ~/.dotfiles/eless/eless ~/bin/eless
