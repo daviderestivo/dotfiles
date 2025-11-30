@@ -291,4 +291,26 @@ profiles:
     icon: fas fa-folder-tree
     id: local:custom:MC:662bd2f5-fa93-488b-995c-331cf2693897
     color: '#613d7c'
+    terminalColorScheme:
+      name: Royal
+      foreground: '#514968'
+      background: '#100815'
+      cursor: '#524966'
+      colors:
+        - '#241f2b'
+        - '#91284c'
+        - '#23801c'
+        - '#b49d27'
+        - '#6580b0'
+        - '#674d96'
+        - '#8aaabe'
+        - '#524966'
+        - '#312d3d'
+        - '#d5356c'
+        - '#2cd946'
+        - '#fde83b'
+        - '#90baf9'
+        - '#a479e3'
+        - '#acd4eb'
+        - '#9e8cbd'
     type: local
