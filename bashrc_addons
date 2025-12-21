@@ -46,8 +46,14 @@ export PATH="/Library/TeX/texbin/:$PATH"
 # Add python3 bin dir to the PATH
 export PATH="$HOMEBREW_BASEDIR/opt/python/bin:$PATH"
 
+# Add /usr/local/bin/ to the PATH
+export PATH="/usr/local/bin:$PATH"
+
 # Set EDITOR
 export EDITOR="${HOME}/bin/edit"
+
+# Unset LESS variable set by oh-my-bash
+unset LESS
 
 ##################
 # BASH FUNCTIONS #
