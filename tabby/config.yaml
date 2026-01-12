@@ -178,7 +178,8 @@ hotkeys:
   scroll-page-down:
     - ⌥-PageDown
 terminal:
-  searchOptions: {}
+  searchOptions:
+    wholeWord: true
   colorScheme:
     name: Atom
     foreground: '#c5c8c6'
