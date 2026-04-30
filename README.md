@@ -22,6 +22,7 @@ minor modifications, they can also be used on GNU/Linux.
 - fzf-git [[Link](https://github.com/junegunn/fzf-git.sh)]
 - grep [[Link](https://www.gnu.org/software/grep)]
 - iTerm2 [[Link](https://www.iterm2.com)]
+- iTerm2 Color Schemes [[Link](https://github.com/mbadolato/iterm2-color-schemes)]
 - imagemagick [[Link](https://imagemagick.org/index.php)]
 - jq [[Link](https://jqlang.github.io/jq/)]
 - magit (via emacs) [[Link](https://magit.vc)]
@@ -100,6 +101,8 @@ brew install fortune-mod --with-offensive --with-fortune-mod-it --with-fortune-m
 
 # Install iterm2
 brew install --cask iterm2@beta
+
+Update iTerm2 to load its configuration from `~/.dotfiles/iterm2`. You can change this in iTerm2 under General → Settings → Load settings from a custom folder or URL.
 
 # Install tmuxinator
 gem install tmuxinator

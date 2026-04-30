@@ -73,3 +73,6 @@
 [submodule "yazi/flavors/everforest-medium.yazi"]
 	path = yazi/flavors/everforest-medium.yazi
 	url = https://github.com/Chromium-3-Oxide/everforest-medium.yazi.git
+[submodule "iterm2/themes"]
+	path = iterm2/themes
+	url = https://github.com/mbadolato/iTerm2-Color-Schemes.git
