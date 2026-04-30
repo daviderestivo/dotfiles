@@ -33,7 +33,6 @@ minor modifications, they can also be used on GNU/Linux.
 - rtv [[Link](https://github.com/michael-lazar/rtv)]
 - ruby [[Link](https://www.ruby-lang.org)]
 - sevenzip [[Link](https://7-zip.org)]
-- tabby [[Link](https://github.com/Eugeny/tabby)]
 - the_silver_searcher [[Link](https://geoff.greer.fm/ag/)]
 - tmux [[Link](https://github.com/tmux/tmux)]
 - tmux-mem-cpu-load [[Link](https://github.com/thewtex/tmux-mem-cpu-load)]
@@ -99,8 +98,8 @@ brew install cowsay-ng
 brew tap daviderestivo/fortune-mod
 brew install fortune-mod --with-offensive --with-fortune-mod-it --with-fortune-mod-woody-allen-it
 
-# Install terminals (you can choose between iTerm or tabby)
-brew install --cask tabby iterm2@beta
+# Install iterm2
+brew install --cask iterm2@beta
 
 # Install tmuxinator
 gem install tmuxinator
@@ -125,7 +124,6 @@ cp ~/.config/mc/ini ~/.config/mc/ini.orig
 cp ~/.config/mc/mc.ext.ini ~/.config/mc/mc.ext.ini.orig
 cp ~/.config/rtv/rtv.cfg ~/.config/rtv/rtv.cfg.orig
 cp ~/.config/bat/config ~/.config/bat/config.orig
-cp ~/Library/Application\ Support/tabby/config.yaml ~/Library/Application\ Support/tabby/config.yaml.orig
 
 # Use the ones provided by this repo
 cd ~
@@ -140,7 +138,6 @@ ln -sf ~/.dotfiles/mc/ini .config/mc/ini
 ln -sf ~/.dotfiles/rtv/rtv.cfg .config/rtv/rtv.cfg
 ln -sf ~/.dotfiles/eless/eless ~/bin/eless
 ln -sf ~/.dotfiles/edit/edit ~/bin/edit
-ln -sf ~/.dotfiles/tabby/config.yaml ~/Library/Application\ Support/tabby/config.yaml
 ln -sf ~/.dotfiles/yazi ~/.config/yazi
 ```
 
