@@ -153350,8 +153350,16 @@
 	<false/>
 	<key>HideScrollbar</key>
 	<true/>
+	<key>Hotkey</key>
+	<true/>
+	<key>HotkeyChar</key>
+	<integer>32</integer>
+	<key>HotkeyCode</key>
+	<integer>49</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>HotkeyModifiers</key>
+	<integer>524288</integer>
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>LeftOption</key>
