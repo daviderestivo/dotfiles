@@ -31,6 +31,10 @@ fi
 export HOMEBREW_BINDIR="$HOMEBREW_BASEDIR/bin:$HOMEBREW_BASEDIR/sbin"
 export PATH="$HOMEBREW_BINDIR:$PATH"
 
+# Homebrew has a built-in environment variable designed specifically
+# to suppress the installtion confirmation prompts
+export HOMEBREW_NO_ASK=1
+
 # Add ~/bin and ~/.local/bin/ to the PATH
 export PATH="~/.local/bin:~/bin:$PATH"
 
