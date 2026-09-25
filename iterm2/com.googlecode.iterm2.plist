@@ -153364,10 +153364,6 @@
 	<integer>4</integer>
 	<key>LeftOption</key>
 	<integer>2</integer>
-	<key>NeverWarnAboutShortLivedSessions_C4E4508B-DF48-478C-A588-4D4E7D94AA7E</key>
-	<true/>
-	<key>NeverWarnAboutShortLivedSessions_C4E4508B-DF48-478C-A588-4D4E7D94AA7E_selection</key>
-	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
